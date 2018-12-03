@@ -1,0 +1,14 @@
+.vys-appname{
+  font-weight: bold;
+  color: Green;
+}
+.vys-logo {
+  margin: 3px;
+  width: 45%;
+}
+
+.vys-hamburger {
+  color: green !important;
+  font-size: 38px;
+  vertical-align: -6px;
+}

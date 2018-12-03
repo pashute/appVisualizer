@@ -1,3 +1,229 @@
-<hmtl>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auroplay Theme builder</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- https://www.w3schools.com/lib/w3-theme-teal.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     
+    <link rel="stylesheet" href="vys.css">
+    <link rel="stylesheet" href="vys-theme.css">
+    <script src="vys.js"></script>
+   </head> 
+   <body>
+    <div id="main-container" class="w3-container">
+        <div id="main-card" class="w3-container w3-card w3-theme">
+            <h5>Aura Theme Viewer</h5>
+        </div>
+        <div id="half1-mobile-results" class="w3-container w3-half w3-mobile">
+            <section class="w3-panel w3-cell-middle"> &nbsp;&nbsp;&nbsp;&nbsp; <input class="w3-radio" type="radio" name="targeted"
+                    value="desktop" /> <i class="fas fa-desktop"></i> Desktop &nbsp;&nbsp;&nbsp;&nbsp; <input class="w3-radio"
+                    type="radio" name="targeted" value="mobile" checked /> <i class="fas fa-mobile"></i> Mobile
+                &nbsp;&nbsp;&nbsp;&nbsp; <input class="w3-radio" type="radio" name="targeted" value="desktop" /> <i class="fas fa-desktop"></i>
+                Tablet
+            </section>
+            <section id="section--theme-results" class="w3-card-4">
+                <main id="results-main" class="w3-card-4 w3-main">
+                    <!-- phone theme results content -->
+                    <div id="in-phone" class="w3-container w3-border inphone">
+                        <div class="toolbar">
+                            <div class="toolbar__left">
+                                <span class="toolbar-button">
+                                    <i class="ion-navicon vys-hamburger"></i>
+                                </span>
+                            </div>
+    
+                            <div class="toolbar__center">
+                                <span id="apptitle" class="vys-appname">Navigation Bar</span>
+                            </div>
+                        </div>
+                        <img class="w3-image vys-logo" src="http://www.sycaralocal.com/wp-content/uploads/2018/10/create-my-logos-vast-creat-logo-outstanding-6-945x318.jpeg" />
+                        <hr />
+                        <button class="w3-button w3-green w3-block">
+                            Top button
+                        </button>
+                        <hr />
+                        <ons-list-title>The List</ons-list-title>
+                        <ons-list>
+                            <ons-list-item expandable>
+                                Expandable item
+                                <div class="expandable-content">Expandable content</div>
+                            </ons-list-item>
+                            <ons-list-item modifier="chevron" tappable>Item with chevron </ons-list-item>
+                            <ons-list-item>Plain item</ons-list-item>
+                        </ons-list>
+                        <hr />
+                        <button class="w3-button w3-green w3-block">
+                            Bottom button
+                        </button>
+    
+                    </div>
+                </main>
+                <footer id="results-footer">The end</footer>
+            </section>
+        </div>
+        <div id="half2-theme-controls" class="w3-container w3-half">
+            <header id="results-header" class="w3-theme">
+                <h4>Choose your theme</h4>
+            </header>
+            <div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
+                <p>Choose a theme by selecting a color to determine the looks of the app. Later, you can change and control
+                    the style of each screen and element in the app. </p>
+            </div>
+            <div id="theme-selection" class="w3-border w3-round">
+                <div class="w3-panel w3-large">
+                    <input class="w3-radio" type="radio" name="themebg" value="clean" checked />
+                    <label class="w3-label">Theme color</label> &nbsp;&nbsp;
+                    <input class="w3-radio" type="radio" name="themebg" value="background" />
+                    <label class="w3-label">Background color</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="panel-rtl" class="w3-right">
+                    <input class="w3-check" type="checkbox" name="chkrtl" />
+                    <label class="w3-label">RTL</label>
+                    </span>
+                </div>
+                <div class="w3-row w3-container">
+                    <button id="clr1" class="w3-button w3-black btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr2" class="w3-button w3-deep-purple btn-margin w3-round-large" onclick="onClrBtnClick();">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr3" class="w3-button w3-cyan btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr4" class="w3-button w3-teal btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr5" class="w3-button w3-brown btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr6" class="w3-button w3-pink btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                </div>
+    
+    
+                <div class="w3-row w3-container">
+                    <button id="clr21" class="w3-button w3-dark-gray btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr22" class="w3-button w3-indigo btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr23" class="w3-button w3-aqua btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr24" class="w3-button w3-green btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr25" class="w3-button w3-deep-orange btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr26" class="w3-button w3-red btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                </div>
+    
+                <div class="w3-row w3-container">
+                    <button id="clr31" class="w3-button w3-gray btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr32" class="w3-button w3-blue btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr33" class="w3-button w3-light-blue btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr34" class="w3-button w3-light-green btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr35" class="w3-button w3-amber btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr36" class="w3-button w3-orange btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                </div>
+    
+                <div class="w3-row w3-container">
+                    <button id="clr41" class="w3-button w3-light-gray btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr42" class="w3-button w3-light-blue btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr43" class="w3-button w3-pale-blue w3-border w3-border-blue btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr44" class="w3-button w3-lime btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr45" class="w3-button w3-yellow w3-border w3-border-brown btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                    <button id="clr46" class="w3-button w3-pale-red btn-margin w3-round-large">
+                        &nbsp;&nbsp;
+                    </button>
+                </div>
+    
+    
+                <hr />
+                <div id="panel--viewdata" class="w3-panel w3-large w3-bottombar w3-padding">
+                    <label class="w3-label">Show theme for app with: </label>
+                    <input class="w3-radio" type="radio" name="viewdata" value="list" checked /> <i class="fas fa-th-list"></i>
+                    list <input class="w3-radio" type="radio" name="viewdata" value="table" /> <i class="fas fa-table"></i>
+                    table
+                    <hr />
+                    <label><strong>Font</strong>:</label>
+                    <select class="w3-select inp-fontfam-width" name="fontchoice">
+                        <option value="1" selected>Arial</option>
+                        <option class="w3-tangerine" value="2">Tangerine</option>
+                        <option class="w3-lobster" value="3">Lobster</option>
+                    </select><br />
+                    <label><strong>Font size</strong></label>: &nbsp; 
+                    <input id="inp-fontsize" name="fontsize" value="14" class="inp-font-size" />pt 
+                    <button class="w3-button">
+                        <em><strong><i class="fas fa-italic"></i></strong></em>
+                    </button> 
+                    <button class="w3-button">
+                        <strong><i class="fas fa-bold"></i></strong>
+                    </button>
+                </div>
+            </div>
+            <div id="panel--logo" class="w3-row w3-large w3-border w3-padding">
+                <div class="w3-col l3 m3"><strong>Logo</strong>:</div> 
+                <div class="w3-rest"> 
+                    <button id="btn-logo" class="w3-button w3-theme w3-round-large"> Upload... </button>
+                </div>
+                <label class="w3-label">width: </label><input id="logowidth" name="logowidth" value="63" class="inp-logo-width" />%
+            </div>
+            <div id="panel--bgimage" class="w3-row w3-large w3-border w3-padding">
+                <div class="w3-col l3 m3"><strong>Background image</strong>:</div> 
+                <div class="w3-rest"> 
+                    <button id="btn-bgimage" class="w3-button w3-theme w3-round-large"> Upload... </button>
+                </div><br />
+                    <input class="w3-radio" type="radio" name="bgmode" value="actual" checked /> actual 
+                    <input class="w3-radio" type="radio" name="bgmode" value="fit" /> fit 
+                    <input class="w3-radio" type="radio" name="bgmode" value="stretch" /> stretch 
+                    <input class="w3-radio" type="radio" name="bgmode" value="tile" /> tile
+            </div>
+    
+        </div>
+    </div>
+
+   </body>
 </hmtl>
