@@ -19,15 +19,28 @@
   flex: auto;
   /*height: 930px;*/
   background-size: contain;/*cover*/
-  background-image: url('https://goo.gl/TFeKoc');
+  background-image: url('../images/samsung.jpg');
   background-repeat: no-repeat;
 }
-.inphone {
+.phone-container{
   position: relative;
-  top: 120px;
-  left: 20px;
-  width: 380px;
+  width: 388px;
   height:800px; /*930px for image*/
+}
+.phone-panel{
+  position: relative;
+  top: 83px;
+  left: 15px;
+  /* inherits width from container */
+  height:642px;
+  /* background-color: lightblue; */
+}
+.phone-content {
+  position: relative;
+  top: 10px;
+  left: 5px;
+  width: 345px;
+  /* background-color: pink; */
 }
 .width100 {
   width: 100%;
