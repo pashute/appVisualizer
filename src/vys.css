@@ -17,16 +17,17 @@
 #results-main {
   /*overflow-y: scroll;*/
   flex: auto;
-  height: 930px;
-  /*background-size: cover;*/
+  /*height: 930px;*/
+  background-size: contain;/*cover*/
   background-image: url('https://goo.gl/TFeKoc');
   background-repeat: no-repeat;
 }
 .inphone {
   position: relative;
   top: 120px;
-  left: 36px;
-  width: 412px;
+  left: 20px;
+  width: 380px;
+  height:800px; /*930px for image*/
 }
 .width100 {
   width: 100%;

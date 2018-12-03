@@ -39,7 +39,7 @@
             <section id="section--theme-results" class="w3-card-4">
                 <main id="results-main" class="w3-card-4 w3-main">
                     <!-- phone theme results content -->
-                    <div id="in-phone" class="w3-container w3-border inphone">
+                    <div id="in-phone" class="w3-container inphone">
                         <div class="toolbar">
                             <div class="toolbar__left">
                                 <span class="toolbar-button">
@@ -91,15 +91,15 @@
                     <input class="w3-radio" type="radio" name="themebg" value="background" />
                     <label class="w3-label">Background color</label>&nbsp;&nbsp;&nbsp;&nbsp;
                     <span id="panel-rtl" class="w3-right">
-                    <input class="w3-check" type="checkbox" name="chkrtl" />
-                    <label class="w3-label">RTL</label>
+                        <input class="w3-check" type="checkbox" name="chkrtl" />
+                        <label class="w3-label">RTL</label>
                     </span>
                 </div>
-                <div class="w3-row w3-container">
+                <div id="clrRow1" class="w3-row w3-container">
                     <button id="clr1" class="w3-button w3-black btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
-                    <button id="clr2" class="w3-button w3-deep-purple btn-margin w3-round-large" onclick="onClrBtnClick();">
+                    <button id="clr2" class="w3-button w3-deep-purple btn-margin w3-round-large w3-border-brown" onclick="onClrBtnClick();">
                         &nbsp;&nbsp;
                     </button>
                     <button id="clr3" class="w3-button w3-cyan btn-margin w3-round-large">
@@ -117,7 +117,7 @@
                 </div>
     
     
-                <div class="w3-row w3-container">
+                <div id="clrRow2" class="w3-row w3-container">
                     <button id="clr21" class="w3-button w3-dark-gray btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
@@ -136,9 +136,13 @@
                     <button id="clr26" class="w3-button w3-red btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
+                    <span id="panel-loadcss" class="w3-right">
+                            <button id="btn-loadcss" class="w3-button w3-theme w3-round-large"> Load theme... </button>
+                    </span>
+    
                 </div>
     
-                <div class="w3-row w3-container">
+                <div id="clrRow3" class="w3-row w3-container">
                     <button id="clr31" class="w3-button w3-gray btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
@@ -157,9 +161,12 @@
                     <button id="clr36" class="w3-button w3-orange btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
+                    <div id="panel-loadcss" class="w3-right">
+                            <button id="btn-loadcss" class="w3-button w3-theme w3-round-large"> Save theme... </button>
+                    </div>
                 </div>
     
-                <div class="w3-row w3-container">
+                <div id="clrRow4" class="w3-row w3-container">
                     <button id="clr41" class="w3-button w3-light-gray btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
@@ -221,7 +228,7 @@
                     <input class="w3-radio" type="radio" name="bgmode" value="stretch" /> stretch 
                     <input class="w3-radio" type="radio" name="bgmode" value="tile" /> tile
             </div>
-    
+            
         </div>
     </div>
 
