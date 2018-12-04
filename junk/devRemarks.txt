@@ -1,0 +1,8 @@
+
+
+image: 
+ contain: fit.     stretch-biggest  keep-ratio
+ cover:   cover.   stretch-smallest keep-ratio
+ fill:    stretch. stretch-biggest  lose-ratio
+ none:    keep.    no stretch       keep-ratio
+ scale-down: minimum ( keep, contain )
