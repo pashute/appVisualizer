@@ -39,41 +39,44 @@
             <section id="section--theme-results" class="w3-card-4">
                 <main id="results-main" class="w3-card-4 w3-main">
                     <!-- phone theme results content -->
-                    <div id="in-phone" class="w3-container inphone">
-                        <div class="toolbar">
-                            <div class="toolbar__left">
-                                <span class="toolbar-button">
-                                    <i class="ion-navicon vys-hamburger"></i>
-                                </span>
+                    <div id="dv-phone-container" class="w3-container phone-container">
+                        <div id="dv-phone-panel" class="phone-panel">
+                        <div id="dv-phone-content" class="phone-content">
+                            <div class="toolbar">
+                                <div class="toolbar__left">
+                                    <span class="toolbar-button">
+                                        <i class="ion-navicon vys-hamburger"></i>
+                                    </span>
+                                </div>
+        
+                                <div class="toolbar__center">
+                                    <span id="apptitle" class="vys-appname">Navigation Bar</span>
+                                </div>
                             </div>
-    
-                            <div class="toolbar__center">
-                                <span id="apptitle" class="vys-appname">Navigation Bar</span>
-                            </div>
+                            <img class="w3-image vys-logo" src="../images/mylogo.jpeg" />
+                            <hr />
+                            <button class="w3-button w3-green w3-block">
+                                Top button
+                            </button>
+                            <hr />
+                            <ons-list-title>The List</ons-list-title>
+                            <ons-list>
+                                <ons-list-item expandable>
+                                    Expandable item
+                                    <div class="expandable-content">Expandable content</div>
+                                </ons-list-item>
+                                <ons-list-item modifier="chevron" tappable>Item with chevron </ons-list-item>
+                                <ons-list-item>Plain item</ons-list-item>
+                            </ons-list>
+                            <hr />
+                            <button class="w3-button w3-green w3-block">
+                                Bottom button
+                            </button>
                         </div>
-                        <img class="w3-image vys-logo" src="http://www.sycaralocal.com/wp-content/uploads/2018/10/create-my-logos-vast-creat-logo-outstanding-6-945x318.jpeg" />
-                        <hr />
-                        <button class="w3-button w3-green w3-block">
-                            Top button
-                        </button>
-                        <hr />
-                        <ons-list-title>The List</ons-list-title>
-                        <ons-list>
-                            <ons-list-item expandable>
-                                Expandable item
-                                <div class="expandable-content">Expandable content</div>
-                            </ons-list-item>
-                            <ons-list-item modifier="chevron" tappable>Item with chevron </ons-list-item>
-                            <ons-list-item>Plain item</ons-list-item>
-                        </ons-list>
-                        <hr />
-                        <button class="w3-button w3-green w3-block">
-                            Bottom button
-                        </button>
-    
+                        </div>
                     </div>
                 </main>
-                <footer id="results-footer">The end</footer>
+                <footer id="results-footer">Status: OK</footer>
             </section>
         </div>
         <div id="half2-theme-controls" class="w3-container w3-half">
@@ -99,7 +102,7 @@
                     <button id="clr1" class="w3-button w3-black btn-margin w3-round-large">
                         &nbsp;&nbsp;
                     </button>
-                    <button id="clr2" class="w3-button w3-deep-purple btn-margin w3-round-large w3-border-brown" onclick="onClrBtnClick();">
+                    <button id="clr2" class="w3-button w3-deep-purple btn-margin w3-round-large w3-border-brown">
                         &nbsp;&nbsp;
                     </button>
                     <button id="clr3" class="w3-button w3-cyan btn-margin w3-round-large">

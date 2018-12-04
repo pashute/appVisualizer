@@ -31,13 +31,13 @@ $(function() {
 
   // btnClr click
   $( "#clr2" ).click(function() {
-    
-    if ( $(this).hasClass("w3-topbar") )
-        $(this).removeClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
-    else
-        $(this).addClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
-    };
-  });
+    console.log(this.id);
+    // if ( $(this).hasClass("w3-topbar") )
+    //     $(this).removeClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
+    // else
+    //     $(this).addClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
+
+  }); // btnClr click
   
 });
 
