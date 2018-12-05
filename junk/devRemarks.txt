@@ -1,8 +1,14 @@
+md - angular material design framework
 
-
-image: 
+image:  crop / stretch / tile 
  contain: fit.     stretch-biggest  keep-ratio
- cover:   cover.   stretch-smallest keep-ratio
+ cover:   crop.   stretch-smallest keep-ratio
  fill:    stretch. stretch-biggest  lose-ratio
  none:    keep.    no stretch       keep-ratio
  scale-down: minimum ( keep, contain )
+
+ ap-smart css (wizard pages for layer-slider)
+ navbar
+
+bootstrap side panel: 
+  dashboard example: https://getbootstrap.com/docs/4.0/examples/dashboard/
