@@ -10,38 +10,39 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./css/serviceManager.css" />
+    <link rel="stylesheet" href="vys.css">
   </head>
   <body>
     <div class="main-container">
       <div id="simulate-web-page">
         <header class="container-fluid">simulated page header</header>
-        <div class="col-sm-3" id="simulate-left">left bar</div>
-        <div class="col-sm-9" id="simulate-main">
-      <div id="vys-theme-component" class="container-fluid page-content">
-        <section id="sec-results" class="col-sm-9">
-          Results stuff
+        <div class="col-sm-3 border-thin-gray" id="simulate-left">left bar</div>
+        <div class="col-sm-9 border-thin-gray" id="simulate-main"><h3>control component inside here</h3>
+      <div id="vys-theme-component" class="container-fluid page-content  border-thin-gray">
+        <section id="sec-results" class="col-sm-9 border-thin-gray">
+          <h2>Results</h2>
         </section>
-        <section id="sec-design" class="col-sm-3">
+        <section id="sec-design" class="col-sm-3 border-thin-gray">
           <h2>Design</h2>
           <ng-form name="appVisualizerStep2Form" 
             novalidate="" 
             class="ng-pristine ng-valid ng-valid-min ng-valid-required ng-valid-empty ng-valid-name" 
-            style="">
+            >
             <ap-details>
-              <dl class="dl-horizontal">
+              <dl class="dl-horizontal vys-details-pad">
                 <div ng-transclude="">
 <ap-detail data-title="Direction" 
   detail-class="empty-border">
   <div class="empty-border details-row" 
     ng-class="{'details-row': padVertically !== 'false', 'with-background': shouldPaintBackground}" style="">
-    <dt class="detail-content" ng-style="::titleStyle">Direction</dt>
+    <dt class="detail-content vys-details-pad" ng-style="::titleStyle">Direction1</dt>
     <dd class="detail-content">
       <ng-transclude>
         <ap-switch model="app.direction" value1="RTL" value2="LTR">
           <md-switch ng-model="model" 
             ng-change="onChange(model, 'LTR')" aria-label="switch" class="md-raised md-primary narrow-switch ng-pristine ng-untouched ng-valid ng-empty" 
             ng-true-value="RTL" ng-false-value="LTR" tabindex="0" type="checkbox" role="checkbox" 
-            aria-checked="false" aria-invalid="false" style="">
+            aria-checked="false" aria-invalid="false">
             <div class="md-container" 
               style="touch-action: pan-x;">
               <div class="md-bar"></div>
@@ -65,7 +66,7 @@
 </ap-detail>
 <ap-detail data-title="Background">
   <div class="details-row" 
-    ng-class="{'details-row': padVertically !== 'false', 'with-background': shouldPaintBackground}" style="">
+    ng-class="{'details-row': padVertically !== 'false', 'with-background': shouldPaintBackground}">
     <dt class="detail-content"  ng-style="::titleStyle">Background</dt>
     <dd class="detail-content">
       <ng-transclude>
@@ -80,7 +81,7 @@
         chosen-constant="app.backgroundStyle" 
         edited-classes="inline app-background-style margin-left-10 align-top">
         <ng-form name="constantInputForm" novalidate="" 
-          ng-class="{'has-error' : constantInputForm[editedName].$invalid , 'col-lg-9' : controlButtons}" class="ng-pristine ng-valid ng-valid-required" style="">
+          ng-class="{'has-error' : constantInputForm[editedName].$invalid , 'col-lg-9' : controlButtons}" class="ng-pristine ng-valid ng-valid-required">
           <!-- ngIf: ::mode.edit || mode.new -->
           <div 
             class="inline app-background-style margin-left-10 align-top ui-select-container ui-select-bootstrap dropdown ui-select-container ui-select-bootstrap dropdown ng-not-empty ng-valid-required" 
@@ -89,7 +90,7 @@
                     <span tabindex="-1" 
                       class="btn btn-default form-control ui-select-toggle" aria-label="Background Style activate" ng-disabled="$select.disabled" ng-click="$select.activate()" style="outline: 0;" role="button" aria-disabled="false">
                       <span 
-                        ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted ng-hide" aria-hidden="true" style="">
+                        ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted ng-hide" aria-hidden="true">
                         Select style
                       </span> 
                       <span 

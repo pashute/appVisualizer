@@ -1,3 +1,12 @@
+.border-thin-gray {
+  border-width: 3px;
+  border-color: '#a2a2a2';
+}
+
+.vys-details-pad{
+  padding: 3px !important;
+}
+
 .w3-tangerine {
   font-family: 'Tangerine', serif !important;
 }
@@ -41,12 +50,10 @@
   width: 345px;
   /* background-color: pink; */
 }
-.width100 {
-  width: 100%;
-}
-.halfwidth {
-  width: 40%;
-}
+/*
+.width100 {   width: 100%; }
+.halfwidth {   width: 40%; }
+*/
 
 /* ---------  CSS of specific elements ------ */
 .btn-margin {
