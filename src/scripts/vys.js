@@ -1,7 +1,8 @@
 //alert('hi');
 // state
 var appState = {
-    selectedColorBtn: 0
+    selectedColorBtn: 0,
+    curDirectionRTL: false
 }
 
 
@@ -27,21 +28,29 @@ var colors = [
 
 /// jq ready
 $(function() {
-  // console.log('dbg.jqready');
+  console.log('dbg.jqready');
+
+  $("#toglDirection").change(function() {
+    console.log("hi");
+    appState.curDirectionRTL = !appState.curDirectionRTL;
+    let rtlTxt = appState.curDirectionRTL ? ' RTL' : ' LTR';
+    console.log(rtlTxt);
+    $("#txtCurDirection").html(rtlTxt);
+  });
 
   // btnClr click
-  $( "#clr2" ).click(function() {
-    console.log(this.id);
+   // $( "#clr2" ).click(function() {
+    // console.log(this.id);
     // if ( $(this).hasClass("w3-topbar") )
     //     $(this).removeClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
     // else
     //     $(this).addClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
 
-  }); // btnClr click
+  //}); // btnClr click
   
 });
 
-
+// testing...
 // btnids.forEach(function(btnid) {
 //   $(btnid).html("hi");
 // });

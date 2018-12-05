@@ -10,5 +10,7 @@ image:  crop / stretch / tile
  ap-smart css (wizard pages for layer-slider)
  navbar
 
+bootstrap toggle button
+
 bootstrap side panel: 
   dashboard example: https://getbootstrap.com/docs/4.0/examples/dashboard/
