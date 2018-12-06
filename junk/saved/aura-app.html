@@ -1,0 +1,62 @@
+<div id="mainPage" data-role="page" data-theme="a" 
+    class="background-crop ui-page ui-page-theme-a ui-page-active"
+    data-url="mainPage" tabindex="0" style="min-height: 970px;">
+  
+  <!-- banner -->
+  <div data-role="header" id="header" data-theme="a" role="banner"   
+       class="ui-header ui-bar-a">
+
+    <!--  HERE GOES   -->   
+    <div class="container-fluid">
+      <div class="row">
+        <a id="titleRow-button" href="#leftpanel" class="ui-btn" style="visibility: hidden">
+          <h3>☰</h3>
+        </a>
+        <a id="headerLogo" href="javascript:navigate('Login.html')" 
+           class="ui-link"> <img src="../../www/img/logo4.png">
+        </a>
+        <h3 id="header-title">Login</h3>
+      </div>
+    </div><!-- of main -->
+  </div><!-- of banner -->
+
+  <div data-role="main" class="ui-content">
+        <form id="mainForm">
+            <span id="SIGNON_USERNAME_0_container" style="display: inline-block; width: 98.0%"> <label for="SIGNON_USERNAME_0">
+                    <nobr>
+                        User Name
+                    </nobr>
+                </label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input id="SIGNON_USERNAME_0"
+                        name="User Name" type="text" value="operations"></div>
+            </span>
+            <span id="SIGNON_PASSWORD_0_container" style="display: inline-block; width: 98.0%"> <label for="SIGNON_PASSWORD_0">
+                    <nobr>
+                        Password
+                    </nobr>
+                </label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input id="SIGNON_PASSWORD_0"
+                        name="Password" type="password" value="welcome"></div>
+            </span>
+        </form>
+        <button id="Login" class="clr-primary ui-btn-raised ui-btn" style="display: inline-block; width: 98.0% !important">
+            Login </button>
+    </div>
+    <!-- Info popup (single OK button) / Confirm popup (OK & Cancel buttons) -->
+    <div style="display: none;" id="popup-placeholder">
+        <!-- placeholder for popup -->
+    </div>
+    <div class="ui-screen-hidden ui-popup-screen ui-overlay-a" id="popup-screen"></div>
+    <div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="popup-popup">
+        <div data-role="popup" id="popup" data-overlay-theme="a" data-theme="a" data-dismissible="false" class="ui-popup ui-body-a ui-overlay-shadow ui-corner-all">
+            <div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
+                <h1 id="popupTitle" style="text-align: center" class="ui-title" role="heading" aria-level="1"></h1>
+            </div>
+            <div role="main" class="ui-content" style="text-align: center">
+                <p id="popupMessage"></p>
+                <a id="popupOkButton" href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"></a>
+                <a id="popupCancelButton" href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,7 +10,17 @@ image:  crop / stretch / tile
  ap-smart css (wizard pages for layer-slider)
  navbar
 
+<div class="bfh-selectbox bfh-googlefonts" data-font="Lato">
+</div>
+
+https://bootsnipp.com/snippets/featured/jquery-checkbox-buttons
+
+image picker!!!!: https://bootsnipp.com/snippets/xpQyW
+
 bootstrap toggle button
 
 bootstrap side panel: 
   dashboard example: https://getbootstrap.com/docs/4.0/examples/dashboard/
+
+vertical slider http://pygmalion.nitri.org/a-vertical-slider-in-html-js-css-1083.html
+

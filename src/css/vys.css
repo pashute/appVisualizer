@@ -4,10 +4,21 @@
   border-width: 1px !important;
 } 
 
+/* ----------- Vendor stuff ------------------- */
+
 /* http://www.bootstraptoggle.com/ */
 .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 50px; }
 .toggle.ios .toggle-handle { border-radius: 20px; }
 
+/* https://bootsnipp.com/snippets/featured/bootstrap-square-buttons */ 
+.btn-sq-xs {
+  width: 25px !important;
+  height: 25px !important;
+  padding:2px;
+}
+
+
+/* ---------- Vys site archived --------- */ 
 .vys-details-pad{
   padding: 3px !important;
 }
