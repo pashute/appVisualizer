@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Aura Visualizer - Theme outline</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+    <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.3.2/css/bootstrap-slider.min.css" />
+    <link rel="stylesheet" href="./css/serviceManager.css" />
+    <link rel="stylesheet" href="./css/app.common.css" />
+    <link rel="stylesheet" href="./css/vys.css" />
+    <link rel="stylesheet" href="./css/vysTheme.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.3.2/bootstrap-slider.min.js"></script>
+    <script src="../vendor/jscolor.js"></script>
+    <script src="./scripts/vys.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="simulate-web-page">
+        <header class="container-fluid">simulated page header</header>
+        <div class="col-sm-2 border-thin-gray" id="simulate-left">left bar</div>
+        <div class="col-sm-10 border-thin-gray" id="simulate-main"><h5 text-middle>Theme Component container</h5>
+      <!--  ===== Component ===== -->
+<div id="vys-theme-component" class="container-fluid page-content">
+    <!-- ===== Results section ===== -->
+  <section id="sec-results" class="col-sm-8">
+    <div id="simtype" class="table-responsive">
+      <table class="table text-center">
+        <tr>
+          <td>
+            <label class="radio-inline">
+              <input type="radio" name="optdisplay" checked />
+              <i class="fa fa-desktop"></i>&nbsp;&nbsp;&nbsp;<strong>desktop</strong>
+            </label>
+             </td>
+          <td>
+              <label class="radio-inline">
+                <input type="radio" name="optdisplay" />
+                <i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;<strong>Mobile</strong>
+              </label>
+          </td>
+          <td>
+            <label class="radio-inline">
+              <input type="radio" name="optdisplay" />
+              <i class="fa fa-tablet"></i>&nbsp;&nbsp;&nbsp;<strong>Tablet</strong>
+            </label>
+          </td>
+          <td class="text-right">
+              <button class="btn-default"><i class="fa fa-expand"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="appsim">
+    <!--  HERE GOES App simulation  -->   
+  <!-- header banner -->
+  <div data-role="header" id="header" data-theme="a" role="banner"   
+       class="ui-header ui-bar-a">
+    <div class="container-fluid">
+      <div class="row vys-row">
+        <span id="titleRow-button" href="#" class="ui-btn" style="visibility: hidden">
+           <h3>☰</h3>
+        </span>
+        <span id="headerLogo">
+          <img id="vysImgHeaderLogo" src="C:\dev\appVisualizer\images\logo4.png" />
+        </span>
+        <span id="header-title">App header title</span>
+      </div>
+    </div><!-- of head container -->
+  </div><!-- of banner -->      
+  <!-- === top button simulation === -->
+  <button id="vysBtn1" class="vys-button ui-btn-raised ui-btn"  
+      style="display: inline-block; width: 98.0% !important"> 
+    Action button 1
+  </button>
+
+  <!-- === data list simulation === -->
+  <div data-role="main" class="ui-content">
+    <div id="mainForm"> <!-- originally a form-->
+      <span id="vysFldContainer1" class="vys-field-container">
+        <label class="vys-label-caption" for="field1">Caption 1</label>
+        <div 
+          class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+          <input type="text" 
+            id="vysInpField1" class="vys-input"
+            name="field1" value="Text input 1" />
+        </div>
+      </span>
+      <span id="vysFldContainer2" class="vys-field-container">
+        <label class="vys-label-caption" for="field2">Caption 2</label>
+        <div 
+          class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+          <input type="text" 
+            id="vysInpField1" class="vys-input"
+            name="field2" value="Field 2 Input" />
+        </div>
+      </span>
+      <span id="vysFldContainer3" class="vys-field-container">
+          <label class="vys-label-caption" for="field1">Caption 3</label>
+          <div 
+            class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+            <input type="text" 
+              id="vysInpField3" class="vys-input"
+              name="field1" value="Text input 3" />
+          </div>
+      </span>      
+    </div><!-- of simulated form -->
+  </div> <!-- of list-->
+
+  <button id="vysBtn2" class="vys-button ui-btn-raised ui-btn"  
+          style="display: inline-block; width: 98.0% !important"> 
+    Action button 2
+  </button>
+</div><!-- appsim -->
+  </section>
+
+  <!-- ---------------------------------------------------   -->
+
+  <!-- ===== Control section ===== -->
+  <section id="sec-design" class="col-sm-4 border-thin-gray">
+    <h4>Theme settings</h4>
+    <tr>
+      <div class="table-responsive">
+<table class="table table-bordered">
+  <tr>
+    <td class="column-text-fit">
+      <strong>Color set: &nbsp;</strong>
+    </td>
+    <td class="column-text-fit">
+      <div id="colorsetChooser" class="color-picker-simulator">
+        <img src="../images/tinyColorPick.jpg" class="color-picker-img" />
+      </div>
+    </td>
+    <td>
+        <i class="fas fa-palette" 
+          style="font-size:20px;color:midnightblue"></i> <br />
+        [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>][9d86c9 v] 
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Font:</strong></td>
+    <td colspan="2">
+      [ font chooser  v] 
+    </td>
+  </tr>  
+</table>
+<strong>App background</strong>
+<table class="table table-bordered">
+  <tr>
+    <td>( ) <strong>Image:</strong></td>:
+    <td>
+      [ browse... ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ( ) stretch &nbsp;&nbsp; ( ) tile 
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>( ) <strong>Color:</strong></td>
+    <td>
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;">]</i>[9d86c9 v]</td>
+  </tr>
+</table>
+<strong>App header</strong>
+<table class="table table-bordered">
+  <tr>
+    <td><strong>Logo:</strong></td>
+    <td colspan="2">
+      [ browse ...] &nbsp;&nbsp; ---()------ &nbsp;&nbsp; [ 42]% 
+    </td>
+  </tr>
+  <tr>  
+    <td><strong>Color:</strong></td>
+    <td class="column-text-fit">
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+      [9d86c9 v]&nbsp;&nbsp; 
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Text:</strong></td>
+    <td class="column-text-fit">
+      [+[ 12]-] pt &nbsp;&nbsp;
+      [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] 
+    </td>
+    <td>
+      <strong>
+          <i class="fa fa-font" style="color:darkgreen"></i>
+      </strong>: &nbsp;      
+      [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+      [050505 v]
+    </td>
+  </tr>
+</table>
+<strong>List settings</strong>
+<table class="table table-bordered">
+    <tr>  
+      <td class="column-text-fit">
+        <strong>Color:</strong>
+      </td>
+      <td>
+        [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+        [9d86c9 v]&nbsp;&nbsp; 
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Caption:</strong></td>
+      <td colspan="2">
+        [+[ 16]-] pt &nbsp;&nbsp;
+        [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] &nbsp;&nbsp;
+        <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
+        [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+        [050505 v]
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Item:</strong></td>
+      <td colspan="2">
+        [+[12.5]-] pt &nbsp;&nbsp;
+        [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] &nbsp;&nbsp;
+        <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
+        [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+        [050505 v]
+      </td>
+    </tr>
+  </table>
+  <strong>Button settings</strong>
+<table class="table table-bordered">
+  <tr>  
+    <td class="column-text-fit"><strong>Color:</strong></td>
+    <td>
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+      [9d86c9 v]&nbsp;&nbsp; 
+    </td>
+  </tr>
+  <tr>
+    <td class="column-text-fit"><strong>Text:</strong></td>
+    <td colspan="2">
+      [+[12.5]-] pt &nbsp;&nbsp;
+      [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] &nbsp;&nbsp;
+      <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
+      [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+      [050505 v]
+    </td>
+  </tr>
+</table>
+    </tr>
+  </section>
+
+      </div><!-- ===== of vys component -->
+      </div><!-- of page-sim main -->
+      </div><!-- of page simulation -->
+      <footer class="container-fluid">Status: OK</footer>
+    </div>
+    <!-- main container -->
+  </body>
+</html>
