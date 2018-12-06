@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Aura Visualizer - Theme outline</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.3.2/css/bootstrap-slider.min.css" />
@@ -25,8 +26,8 @@
     <div class="main-container">
       <div id="simulate-web-page">
         <header class="container-fluid">simulated page header</header>
-        <div class="col-sm-3 border-thin-gray" id="simulate-left">left bar</div>
-        <div class="col-sm-9 border-thin-gray" id="simulate-main"><h5 text-middle>Theme Component container</h5>
+        <div class="col-sm-2 border-thin-gray" id="simulate-left">left bar</div>
+        <div class="col-sm-10 border-thin-gray" id="simulate-main"><h5 text-middle>Theme Component container</h5>
       <!--  ===== Component ===== -->
 <div id="vys-theme-component" class="container-fluid page-content">
     <!-- ===== Results section ===== -->
@@ -64,69 +65,188 @@
   <div data-role="header" id="header" data-theme="a" role="banner"   
        class="ui-header ui-bar-a">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row vys-row">
         <span id="titleRow-button" href="#" class="ui-btn" style="visibility: hidden">
           <!-- <h3>☰</h3> -->
         </span>
         <span id="headerLogo">
           <img id="vysImgHeaderLogo" src="C:\dev\appVisualizer\images\logo4.png" />
         </span>
-        <span id="header-title">Login</span>
+        <span id="header-title">App header title</span>
       </div>
-    </div><!-- of main -->
+    </div><!-- of head container -->
   </div><!-- of banner -->      
-    </div><!-- appsim -->
+  <!-- === top button simulation === -->
+  <button id="vysBtn1" class="vys-button ui-btn-raised ui-btn"  
+      style="display: inline-block; width: 98.0% !important"> 
+    Action button 1
+  </button>
+
+  <!-- === data list simulation === -->
+  <div data-role="main" class="ui-content">
+    <div id="mainForm"> <!-- originally a form-->
+      <span id="vysFldContainer1" class="vys-field-container">
+        <label class="vys-label-caption" for="field1">Caption 1</label>
+        <div 
+          class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+          <input type="text" 
+            id="vysInpField1" class="vys-input"
+            name="field1" value="Text input 1" />
+        </div>
+      </span>
+      <span id="vysFldContainer2" class="vys-field-container">
+        <label class="vys-label-caption" for="field2">Caption 2</label>
+        <div 
+          class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+          <input type="text" 
+            id="vysInpField1" class="vys-input"
+            name="field2" value="Field 2 Input" />
+        </div>
+      </span>
+      <span id="vysFldContainer3" class="vys-field-container">
+          <label class="vys-label-caption" for="field1">Caption 3</label>
+          <div 
+            class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+            <input type="text" 
+              id="vysInpField3" class="vys-input"
+              name="field1" value="Text input 3" />
+          </div>
+      </span>      
+    </div><!-- of simulated form -->
+  </div> <!-- of list-->
+
+  <button id="vysBtn2" class="vys-button ui-btn-raised ui-btn"  
+          style="display: inline-block; width: 98.0% !important"> 
+    Action button 2
+  </button>
+</div><!-- appsim -->
   </section>
-    <!-- ===== Control section ===== -->
+
+  <!-- ---------------------------------------------------   -->
+
+  <!-- ===== Control section ===== -->
   <section id="sec-design" class="col-sm-4 border-thin-gray">
-    <h2>Theme Settings</h2>
+    <h4>Theme settings</h4>
     <form>
       <div class="table-responsive">
-<strong>Theme</strong>
 <table class="table table-bordered">
   <tr>
-    <td><strong>Color set:</strong></td>
-    <td><div id="colorsetChooser" style="width:75px;height:75px;background-color: lightgoldenrodyellow"></div>
+    <td class="column-text-fit">
+      <strong>Color set: &nbsp;</strong>
+    </td>
+    <td class="column-text-fit">
+      <div id="colorsetChooser" class="color-picker-simulator">
+        <img src="../images/tinyColorPick.jpg" class="color-picker-img" />
+      </div>
+    </td>
+    <td>
+        <i class="fas fa-palette" 
+          style="font-size:20px;color:midnightblue"></i> <br />
+        [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>][9d86c9 v] 
     </td>
   </tr>
-  <tr>
-    <td><strong>Custom: </strong></td>
-    <td>[ ] color picker V</td>
-  </tr>
 </table>
-<strong>Background</strong>
+<strong>App background</strong>
 <table class="table table-bordered">
   <tr>
     <td>( ) <strong>Image:</strong></td>:
-    <td>[ browse... ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( ) stretch  ( ) tile </td>
+    <td>
+      [ browse... ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ( ) stretch &nbsp;&nbsp; ( ) tile 
+    </td>
     <td></td>
   </tr>
   <tr>
     <td>( ) <strong>Color:</strong></td>
-    <td>color picker</td>
+    <td>
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;">]</i>[9d86c9 v]</td>
   </tr>
 </table>
-<strong>Header</strong>
+<strong>App header</strong>
 <table class="table table-bordered">
   <tr>
-    <td>something here</td>
+    <td><strong>Logo:</strong></td>
+    <td colspan="2">
+      [ browse ...] &nbsp;&nbsp; ---()------ &nbsp;&nbsp; [ 42]% 
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Text:</strong></td>
+    <td colspan="2">
+      [ font chooser  v] &nbsp;&nbsp; [+[ 12]-] pt &nbsp;&nbsp;
+        [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] 
+    </td>
+  </tr>
+  <tr>  
+    <td><strong>Colors:</strong></td>
+    <td class="column-text-fit">
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+      [9d86c9 v]&nbsp;&nbsp; 
+    </td>
+    <td>
+      <strong>
+        <i class="fa fa-font" style="color:darkgreen"></i>
+      </strong>: &nbsp;      
+      [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+      [050505 v]
+    </td>        
   </tr>
 </table>
-<hr />
-<strong>Button</strong>
+<strong>List settings</strong>
+<table class="table table-bordered">
+    <tr>
+      <td><strong>Caption text:</strong></td>
+      <td colspan="2">
+        [ font chooser  v] &nbsp;&nbsp; [+[ 12]-] pt &nbsp;&nbsp;
+          [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] 
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Item text:</strong></td>
+      <td colspan="2">
+        [ font chooser  v] &nbsp;&nbsp; [+[ 12]-] pt &nbsp;&nbsp;
+          [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] 
+      </td>
+    </tr>
+    <tr>  
+      <td><strong>Colors:</strong></td>
+      <td class="column-text-fit">
+        [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+        [9d86c9 v]&nbsp;&nbsp; 
+      </td>
+      <td>
+        <strong>
+          <i class="fa fa-font" style="color:darkgreen"></i>
+        </strong>: &nbsp;      
+        [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+        [050505 v]
+      </td>        
+    </tr>
+  </table>
+  <strong>Button settings</strong>
 <table class="table table-bordered">
   <tr>
-    <td>something here</td>
+    <td><strong>Text:</strong></td>
+    <td colspan="2">
+      [ font chooser  v] &nbsp;&nbsp; [+[ 12]-] pt &nbsp;&nbsp;
+        [<i class="fa fa-italic"></i>] &nbsp; [<i class="fa fa-bold"></i>] 
+    </td>
+  </tr>
+  <tr>  
+    <td><strong>Colors:</strong></td>
+    <td class="column-text-fit">
+      [<i class="fa fa-square" style="color:#9d86c9;size:2px;"></i>]
+      [9d86c9 v]&nbsp;&nbsp; 
+    </td>
+    <td>
+      <strong>
+        <i class="fa fa-font" style="color:darkgreen"></i>
+      </strong>: &nbsp;      
+      [<i class="fa fa-square" style="color:#050505;size:2px;"></i>]
+      [050505 v]
+    </td>        
   </tr>
 </table>
-<hr />
-<strong>List</strong>
-<table class="table table-bordered">
-  <tr>
-    <td>something here</td>
-  </tr>
-</table>
-      </>
     </form>
   </section>
 
