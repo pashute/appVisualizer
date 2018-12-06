@@ -15,6 +15,8 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.3.2/css/bootstrap-slider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.3.2/bootstrap-slider.min.js"></script>
     <script src="../vendor/jscolor.js"></script>
     <link rel="stylesheet" href="./css/serviceManager.css" />
     <link rel="stylesheet" href="./css/vys.css" />
@@ -27,93 +29,116 @@
         <div class="col-sm-3 border-thin-gray" id="simulate-left">left bar</div>
         <div class="col-sm-9 border-thin-gray" id="simulate-main"><h5 text-middle>Theme Component container</h5>
       <!--  ===== Component ===== -->
-      <div id="vys-theme-component" class="container-fluid page-content">
-        <section id="sec-results" class="col-sm-9">
-          <h2>Results 1</h2>
-        </section>
-        <section id="sec-design" class="col-sm-3 border-thin-gray">
-          <h2>Application looks</h2>
-          <form>
+<div id="vys-theme-component" class="container-fluid page-content">
+  <section id="sec-results" class="col-sm-9">
+    <h2>Results</h2>
+  </section>
+  <section id="sec-design" class="col-sm-3 border-thin-gray">
+    <h2>Application looks</h2>
+    <form>
 <!--        <ng-form name="appVisualizerStep2Form" -->
-            <div id="panelDirection" class="form-group">
-              <!-- originally ap-switch and md-switch -->
-              <label for="toglDirection">
-                <strong>Direction:</strong>
-              </label>
-              <input id="toglDirection" 
-                type="checkbox" data-toggle="toggle" data-size="small" data-style="ios"  
-                data-on=" " data-off=" " /> <span id="txtCurDirection"> LTR</span>
-            </div>
-            <div id="panelThemeColor" class="form-group">
-              <div class="row">
-                <div class="col-sm-1">&nbsp;</div>
-                <div class="col-sm-11">
-                <strong>Theme</strong>: <img src="../images/tinyColorPick.jpg" />
-              </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-11">
-                  <strong>Custom:</strong> <input id="txtThemeColor" 
-                  class="jscolor" value="A8A8A8" />
-                </div>
-              </div>
-                <!-- <a class="btn action-button btn-purple">
-                  <i style="font-size: 18px" class="fa fa-tachometer">
-                </i> </a>-->
-            </div> 
-            <hr />
-            <div id="panelBackground" class="form-group" >
-              <p><strong>Background</strong></p>
-              <div id="rowBgColor" class="row">
-                <div class="col-sm-4">
-                  &nbsp;&nbsp; <input id="radioBgColor" type="radio" 
-                          name="radioBg" checked>
-                  <strong>Color: </strong>
-                </div> 
-                <div class="col-sm-4">
-                  <input id="txtBgColor" class="jscolor" value="A8A8A8" />
-                  <!--
-                  <input id="btnBgColor" type="color" class="btn btn-default btn-lg" 
-                    name="btnBgColor"/>
-                  -->
-                </div>
-              </div>
-              <div id="rowBgImage" class="row">
-                <div class="col-sm-4">
-                    &nbsp;&nbsp;
-                    <input id="radioBackground" type="radio"
-                      name="radioBg"> 
-                    <strong>Image: </strong> 
-                </div>
-                <div class="col-sm-4">
-                  <span id="btnBgImage" 
-                    class="btn btn-default btn-sm btn-file"> Browse <input type="file" />
-                  </span>
-                </div>
-              </div>
-              <div class="rowImgOptions">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-11">
-                  <input id="radioImgStretch" type="radio"
-                    name="radioImg"> Stretch &nbsp;&nbsp;                    
-                  <input id="radioImgTile" type="radio"
-                    name="radioImg"> Tile                    
-                </div>
-              </div>
-            </div><!-- of bg panelBackground-->
-            <hr />    
+      <div id="panelDirection" class="form-group">
+        <!-- originally ap-switch and md-switch -->
+        <label for="toglDirection">
+          <strong>Direction:</strong>
+        </label>
+        <input id="toglDirection" 
+          type="checkbox" data-toggle="toggle" data-size="small" data-style="ios"  
+          data-on=" " data-off=" " /> <span id="txtCurDirection"> LTR</span>
+      </div>
+      <div id="panelThemeColor" class="form-group">
+        <div class="row">
+          <div class="col">
+            &nbsp;&nbsp; <strong>Theme</strong>: <img src="../images/tinyColorPick.jpg" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-8">
+            <strong>Custom:</strong> <input id="txtThemeColor" 
+                                        class="jscolor" value="A8A8A8" />
+          </div>
+        </div>
+        <!-- <a class="btn action-button btn-purple">
+              <i style="font-size: 18px" class="fa fa-tachometer">
+          </i> </a>-->
+      </div><!-- of panel theme--> 
+      <hr />
+      <div id="panelHeader" class="form-group" >
+        <p><strong>Header</strong></p>
+        <div id="rowHdrColor" class="row" style="margin-top: 2px;">
+          <div class="col-sm-4">
+            &nbsp;&nbsp; <strong>Color: </strong>
+          </div> 
+          <div class="col-sm-4">
+            <input id="txtBgColor" class="jscolor" value="A8A8A8" />
+            <!--
+              <input id="btnBgColor" type="color" class="btn btn-default btn-lg" 
+              name="btnBgColor"/>
+            -->
+          </div>
+        </div> <!-- of rowHdrColor -->
+        <div id="rowLogoImage" class="row">
+        <div class="col-sm-4">
+          &nbsp;&nbsp; <strong>Logo: </strong> 
+        </div>
+        <div class="col-sm-4">
+          <span id="btnLogoImage" 
+                class="btn btn-default btn-sm btn-file"> Browse <input type="file" />
+          </span>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-4">
+            <input id="sliderLogoWidth" type="range"
+                  name="logoWidth" /> 
+            <span id="txtLogoWidth">50</span>%
+          </div>
+        </div>
+      </div>  
+    </div><!-- of bg panelHeader-->
+              <hr />
+              <div id="panelBackground" class="form-group" >
+                  <p><strong>Background</strong></p>
+                  <div id="rowBgColor" class="row">
+                    <div class="col-sm-4">
+                      &nbsp;&nbsp; <input id="radioBgColor" type="radio" 
+                              name="radioBg" checked>
+                      <strong>Color: </strong>
+                    </div> 
+                    <div class="col-sm-4">
+                      <input id="txtBgColor" class="jscolor" value="A8A8A8" />
+                      <!--
+                      <input id="btnBgColor" type="color" class="btn btn-default btn-lg" 
+                        name="btnBgColor"/>
+                      -->
+                    </div>
+                  </div>
+                  <div id="rowBgImage" class="row">
+                    <div class="col-sm-4">
+                        &nbsp;&nbsp;
+                        <input id="radioBackground" type="radio"
+                          name="radioBg"> 
+                        <strong>Image: </strong> 
+                    </div>
+                    <div class="col-sm-4">
+                      <span id="btnBgImage" 
+                        class="btn btn-default btn-sm btn-file"> Browse <input type="file" />
+                      </span>
+                    </div>
+                  </div>
+                  <div class="rowImgOptions">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11">
+                      <input id="radioImgStretch" type="radio"
+                        name="radioImg" checked> Stretch &nbsp;&nbsp;                    
+                      <input id="radioImgTile" type="radio"
+                        name="radioImg"> Tile                    
+                    </div>
+                  </div>
+                </div><!-- of bg panelBackground-->    
+              <hr />    
             <div id="panelLogo" class="form-group">
-              <div id="rowLogoImage" class="row">
-                <div class="col-sm-4">
-                    &nbsp;&nbsp; <strong>Logo: </strong> 
-                </div>
-                <div class="col-sm-4">
-                  <span id="btnLogoImage" 
-                    class="btn btn-default btn-sm btn-file"> Browse <input type="file" />
-                  </span>
-                </div>
-              </div>  
             </div><!-- of panel logo-->
           </form>
         </section>
