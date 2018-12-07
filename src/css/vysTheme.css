@@ -4,6 +4,9 @@ element.style {
     min-height: 514px;
 }
 */
+input.jscolor {
+    width: 60px;
+}
 .ui-content {
     font-size: 16px;
     font-weight: 400;

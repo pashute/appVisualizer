@@ -1,0 +1,81 @@
+<Template name="vysThemeAppSimulator">
+
+    <div id="simtype" class="table-responsive">
+        <table class="table text-center">
+            <tr>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optdisplay" checked />
+                        <i class="fa fa-desktop"></i>&nbsp;&nbsp;&nbsp;<strong>desktop</strong>
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optdisplay" />
+                        <i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;<strong>Mobile</strong>
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optdisplay" />
+                        <i class="fa fa-tablet"></i>&nbsp;&nbsp;&nbsp;<strong>Tablet</strong>
+                    </label>
+                </td>
+                <td class="text-right">
+                    <button class="btn-default"><i class="fa fa-expand"></i></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="appsim">
+        <!--  HERE GOES App simulation  -->
+        <!-- header banner -->
+        <div data-role="header" id="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
+            <div class="container-fluid">
+                <div class="row vys-row">
+                    <span id="titleRow-button" href="#" class="ui-btn" style="visibility: hidden">
+                        <h3>☰</h3>
+                    </span>
+                    <span id="headerLogo">
+                        <img id="vysImgHeaderLogo" src="C:\dev\appVisualizer\images\logo4.png" />
+                    </span>
+                    <span id="header-title">App header title</span>
+                </div>
+            </div><!-- of head container -->
+        </div><!-- of banner -->
+        <!-- === top button simulation === -->
+        <button id="vysBtn1" class="vys-button ui-btn-raised ui-btn" style="display: inline-block; width: 98.0% !important">
+            Action button 1
+        </button>
+
+        <!-- === data list simulation === -->
+        <div data-role="main" class="ui-content">
+            <div id="mainForm">
+                <!-- originally a form-->
+                <span id="vysFldContainer1" class="vys-field-container">
+                    <label class="vys-label-caption" for="field1">Caption 1</label>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+                        <input type="text" id="vysInpField1" class="vys-input" name="field1" value="Text input 1" />
+                    </div>
+                </span>
+                <span id="vysFldContainer2" class="vys-field-container">
+                    <label class="vys-label-caption" for="field2">Caption 2</label>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+                        <input type="text" id="vysInpField1" class="vys-input" name="field2" value="Field 2 Input" />
+                    </div>
+                </span>
+                <span id="vysFldContainer3" class="vys-field-container">
+                    <label class="vys-label-caption" for="field1">Caption 3</label>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset vys-input-container">
+                        <input type="text" id="vysInpField3" class="vys-input" name="field1" value="Text input 3" />
+                    </div>
+                </span>
+            </div><!-- of simulated form -->
+        </div> <!-- of list-->
+
+        <button id="vysBtn2" class="vys-button ui-btn-raised ui-btn" style="display: inline-block; width: 98.0% !important">
+            Action button 2
+        </button>
+    </div><!-- appsim -->
+
+</Template>

@@ -1,3 +1,6 @@
+bootsnip search bootstrap samples and plugins: 
+ https://bootsnipp.com/snippets
+
 md - angular material design framework
 
 image:  crop / stretch / tile 
@@ -10,8 +13,8 @@ image:  crop / stretch / tile
  ap-smart css (wizard pages for layer-slider)
  navbar
 
-<div class="bfh-selectbox bfh-googlefonts" data-font="Lato">
-</div>
+x for pay:bfh bootstrap helpers
+  <div class="bfh-selectbox bfh-googlefonts" data-font="Lato"></div>
 
 https://bootsnipp.com/snippets/featured/jquery-checkbox-buttons
 
