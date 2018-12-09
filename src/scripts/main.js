@@ -1,7 +1,36 @@
+// import * as vys from 'vysObjects';
+// babel output
+  // var _vysObjects = require('vysObjects');
+  // var vys = _interopRequireWildcard(_vysObjects);
+  // function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var IsGeneralSettings = true;
+
 /// jq ready
 $(function() {
-    console.log('dbg.jqready');
-  
+    console.log("jquery ready");
+
+    // getScript fails on CORS and gives not-defined. 
+    // $.getScript("//vysObjects.js", function() {
+    //     console.log("vysObjects loaded");
+    //  });
+
+    /// btnToggleSettings click
+    $("#btnToggleSettings").click(function(){
+        if (IsGeneralSettings) {
+            console.log("change to details");
+            $("detailControls").css("display","block");
+            $("#generalControls").css("display", "none");
+            $("#btnToggleSettings").html("General settings...");
+        } else {
+            console.log("change to general");
+            $("#generalControls").css("display", "block");
+            $("detailControls").css("display","none");
+            $("#btnToggleSettings").html("Set details...");
+        }
+        IsGeneralSettings = ! IsGeneralSettings;
+    });
+
     $("#toglDirection").change(function() {
       console.log("hi");
       appState.curDirectionRTL = !appState.curDirectionRTL;
@@ -99,39 +128,3 @@ $(function() {
   }  
 
 
-// -----------------------------------------------------  
-
-
-//alert('hi');
-// state
-var appState = {
-    selectedColorBtn: 0,
-    curDirectionRTL: false
-}
-
-
-var themeDefaults = { 
-    themeIdx: 1, colorClass: "w3-green", 
-    fontFamIdx: 1, fontFam: "Arial",
-    fontSize: 14
-};
-
-
-var btnids = [
-  '#clr1', '#clr2', '#clr3', '#clr4', '#clr5', '#clr6',
-  '#clr21', '#clr22', '#clr23', '#clr24', '#clr25', '#clr26',
-  '#clr31', '#clr32', '#clr33', '#clr34', '#clr35', '#clr36',
-  '#clr41', '#clr42', '#clr43', '#clr44', '#clr45', '#clr46'
-];
-var colors = [
-    'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue',
-    'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue',
-    'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue',
-    'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue', 'w3-blue'
-];
-
-
-// testing...
-// btnids.forEach(function(btnid) {
-//   $(btnid).html("hi");
-// });

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./css/vys.css" />
     <link rel="stylesheet" href="./css/vysTheme.css" />
 
+    <!-- requireJs 2.3.6: data-main loads scripts/main.js after require.js loads. -->
+    <!-- <script data-main="scripts/main" src="scripts/require.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
@@ -25,7 +27,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-fontselect/0.13.4/angular-fontselect.min.js"></script>
     <script src="../vendor/fontselector.js"></script>
     <script src="../vendor/jscolor.js"></script>
-    <script src="./scripts/vys.js"></script>
+    <!-- <script src="vysObjects.js"></script> -->
+    <script src="./scripts/main.js"></script>
   </head>
   <body>
     <div class="main-container">
@@ -125,13 +128,101 @@
     Action button 2
   </button>
 </div><!-- appsim -->
-  </section>
-  <!-- ---------------------------------------------------   -->
-  <!-- ===== Control section ===== -->
-  <section id="sec-design" class="col-sm-4">
-
+</section>
+<!-- ---------------------------------------------------   -->
+<!-- ===== Control section ===== -->
+<section id="sec-design" class="col-sm-4">
+  <!-- ==========  General control card ==============  -->  
+<div id="generalControls">
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <td class="column-text-fit">
+          <strong>Color set: &nbsp;</strong>
+        </td>
+        <td class="column-text-fit">
+          <div id="colorsetChooser" class="color-picker-simulator">
+            <img src="../images/tinyColorPick.jpg" class="color-picker-img" />
+          </div>
+        </td>
+        <td>
+          <i class="fas fa-palette" 
+            style="font-size:20px;color:midnightblue"></i> <br />
+            <i id="clrThemeCustom" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
+            <input class="jscolor" mybox="clrThemeCustom" onchange="onJqColor(this)" value="9d86c9" />    
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+            &nbsp;&nbsp;<a href="www.ibm.com">import theme... </a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#">export theme... </a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+            &nbsp;<strong>Font &nbsp;&nbsp;&nbsp;
+            <div class="form-group">
+              <select class="form-control" id="slctFont">
+                <option>Arial</option>
+                <option>Georgia</option>
+                <option>Times New Roman</option>
+                <option>David</option>
+              </select>
+            </div>
+        </td>
+      </tr>  
+      <tr>
+        <td class="column-text-fit">
+          <input type="radio" class="inline-radio" /> 
+          <strong>Background image:</strong></td>:
+        <td>
+          <input type="submit" value="Browse..." />  
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="2">
+          <input type="radio" class="inline-radio">&nbsp; 
+          <i class="fas fa-expand-arrows-alt"></i> Stretch</input> &nbsp;&nbsp; 
+          <input type="radio" class="inline-radio">&nbsp; 
+          <i class="fas fa-th"></i> Tile 
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="radio" class="inline-radio" /> 
+          <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
+          <i id="clrAppBg" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
+          <input class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="9d86c9" />
+        </td>
+      </tr>
+    </table>
+    <table class="table">
+      <tr>
+        <td class="column-text-fit"><strong>Logo:</strong></td>
+        <td colspan="2">
+            <input type="submit" value="Browse..." /> &nbsp;&nbsp; 
+            <span class="form-inline">
+              <div class="form-group">
+                &nbsp;&nbsp;
+                <input type="range" style="width: 80px" 
+                  data-min="25" data-max="150" value="42"  /> 
+                &nbsp;&nbsp; 
+              </div>
+              <div class="form-group">
+                &nbsp;&nbsp;<input type="number" value="42" style="width: 40px" /> %
+              </div>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><!-- of general controls-->
+      
 <!--  ====== Detail controls card ========= -->
-<div id="detailControls">
+<div id="detailControls" style="display:none">
   <h3> Detailed settings </h3>
     <strong>App header</strong>
     <table class="table">
@@ -256,104 +347,9 @@
         </tr>
     </table>
     
-    </div><!-- of general controls-->
-    
-    &nbsp;&nbsp;<button class="btn-default btn-lg"> &lt;&lt; General settings </button>
-
-  <!-- ==========  General control card ==============  -->  
-<div id="generalControls" style="display:none">
-<div class="table-responsive">
-<table class="table">
-  <tr>
-    <td class="column-text-fit">
-      <strong>Color set: &nbsp;</strong>
-    </td>
-    <td class="column-text-fit">
-      <div id="colorsetChooser" class="color-picker-simulator">
-        <img src="../images/tinyColorPick.jpg" class="color-picker-img" />
-      </div>
-    </td>
-    <td>
-      <i class="fas fa-palette" 
-        style="font-size:20px;color:midnightblue"></i> <br />
-        <i id="clrThemeCustom" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-        <input class="jscolor" mybox="clrThemeCustom" onchange="onJqColor(this)" value="9d86c9" />    
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        &nbsp;&nbsp;<a href="www.ibm.com">import theme... </a> 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#">export theme... </a>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        &nbsp;<strong>Font &nbsp;&nbsp;&nbsp;
-        <div class="form-group">
-          <select class="form-control" id="slctFont">
-            <option>Arial</option>
-            <option>Georgia</option>
-            <option>Times New Roman</option>
-            <option>David</option>
-          </select>
-        </div>
-    </td>
-  </tr>  
-  <tr>
-    <td class="column-text-fit">
-      <input type="radio" class="inline-radio" /> 
-      <strong>Background image:</strong></td>:
-    <td>
-      <input type="submit" value="Browse..." />  
-    </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <input type="radio" class="inline-radio">&nbsp; 
-      <i class="fas fa-expand-arrows-alt"></i> Stretch</input> &nbsp;&nbsp; 
-      <input type="radio" class="inline-radio">&nbsp; 
-      <i class="fas fa-th"></i> Tile 
-    </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <input type="radio" class="inline-radio" /> 
-      <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
-      <i id="clrAppBg" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-      <input class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="9d86c9" />
-    </td>
-  </tr>
-</table>
-<table class="table">
-  <tr>
-    <td class="column-text-fit"><strong>Logo:</strong></td>
-    <td colspan="2">
-        <input type="submit" value="Browse..." /> &nbsp;&nbsp; 
-        <span class="form-inline">
-      <div class="form-group">
-        &nbsp;&nbsp;
-        <input type="range" style="width: 80px" 
-          data-min="25" data-max="150" value="42"  /> 
-        &nbsp;&nbsp; 
-    </div>
-    <div class="form-group">
-        &nbsp;&nbsp;<input type="number" value="42" style="width: 40px" /> %
-    </div>
-  </span>
-      </div>
-    </td>
-  </tr>
-</table>
-</div><!-- of general controls-->
-
-  
-  
-
-
-  </section>
+    </div><!-- of details controls-->
+   
+    </section>
 
       </div><!-- ===== of vys component -->
       </div><!-- of page-sim main -->
