@@ -1,5 +1,8 @@
 var IsGeneralSettings = true;
 
+// See list of classes in vysCtrl.css
+
+
 /// jq ready
 $(function() {
     console.log("jquery ready");

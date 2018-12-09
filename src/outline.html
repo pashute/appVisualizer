@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/app.common.css" />
     <link rel="stylesheet" href="./css/vys.css" />
     <link rel="stylesheet" href="./css/vysTheme.css" />
+    <link rel="stylesheet" href="./css/vysCtrl.css" />
 
     <!-- requireJs 2.3.6: data-main loads scripts/main.js after require.js loads. -->
     <!-- <script data-main="scripts/main" src="scripts/require.js"></script> -->
@@ -39,7 +40,7 @@
       <!--  ===== Component ===== -->
 <div id="vys-theme-component" class="container-fluid page-content">
     <!-- ===== Results section ===== -->
-  <section id="sec-results" class="col-sm-8">
+  <section id="sec-results" class="col-sm-8 vys-background">
     <div id="simtype" class="table-responsive">
       <table class="table text-center">
         <tr>
@@ -71,7 +72,7 @@
     <!--  HERE GOES App simulation  -->   
   <!-- header banner -->
   <div data-role="header" id="header" data-theme="a" role="banner"   
-       class="ui-header ui-bar-a">
+       class="ui-header ui-bar-a vys-header">
     <div class="container-fluid">
       <div class="row vys-row">
         <span id="titleRow-button" href="#" class="ui-btn" style="visibility: hidden">
@@ -80,7 +81,7 @@
         <span id="headerLogo">
           <img id="vysImgHeaderLogo" src="C:\dev\appVisualizer\images\logo4.png" />
         </span>
-        <span id="header-title">App header title</span>
+        <span id="header-title" class="vys-header-text">App header title</span>
       </div>
     </div><!-- of head container -->
   </div><!-- of banner -->      
@@ -167,16 +168,16 @@
         </td>
         <td>
           <i class="fas fa-palette" 
-            style="font-size:20px;color:midnightblue"></i> <br />
+            style="font-size:20px;color:#9D86c9"></i> <br />
             <i id="clrThemeCustom" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
             <input class="jscolor" mybox="clrThemeCustom" onchange="onJqColor(this)" value="9d86c9" />    
         </td>
       </tr>
       <tr>
-        <td colli="3">
-            &nbsp;&nbsp;<a href="www.ibm.com">import theme... </a> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">export theme... </a>
+        <td colspan="3">
+            <button><a href="#" class="btn">import theme... </a></button>
+            &nbsp;&nbsp;
+            <button><a href="#"class="btn">export theme... </a></button>
         </td>
       </tr>
       <tr>
@@ -246,7 +247,6 @@
 <!--  ====== Detail controls card ========= -->
 <div id="detailControls" style="display:none">
   <br />
-  <h3> Detailed settings </h3>
   <strong>App header</strong>
   <div class="table-responsive">
   <table class="table">
