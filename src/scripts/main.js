@@ -1,35 +1,38 @@
-// import * as vys from 'vysObjects';
-// babel output
-  // var _vysObjects = require('vysObjects');
-  // var vys = _interopRequireWildcard(_vysObjects);
-  // function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 var IsGeneralSettings = true;
 
 /// jq ready
 $(function() {
     console.log("jquery ready");
-
-    // getScript fails on CORS and gives not-defined. 
-    // $.getScript("//vysObjects.js", function() {
-    //     console.log("vysObjects loaded");
-    //  });
+    //$("detailControls").css("display","none");
 
     /// btnToggleSettings click
-    $("#btnToggleSettings").click(function(){
-        if (IsGeneralSettings) {
-            console.log("change to details");
-            $("detailControls").css("display","block");
-            $("#generalControls").css("display", "none");
-            $("#btnToggleSettings").html("General settings...");
-        } else {
-            console.log("change to general");
-            $("#generalControls").css("display", "block");
-            $("detailControls").css("display","none");
-            $("#btnToggleSettings").html("Set details...");
-        }
-        IsGeneralSettings = ! IsGeneralSettings;
+    $("#tabSetDetails").click(function(){
+        IsGeneralSettings = false;
+        setTab(isGeneral=false); // isGeneral
     });
+    $("#tabSetGeneral").click(function(){
+        IsGeneralSettings = true;
+        setTab(isGeneral=true); // isGeneral
+    });
+    $(".btn-togglesettings").click(function(){
+        setTab(isGeneral=!IsGeneralSettings)
+    });
+
+    function setTab(isGeneral){
+        var ctrlToDisplay = (isGeneral ? "#generalControls" : "#detailControls");
+        var ctrlToHide = (isGeneral ?  "#detailControls" : "#generalControls");
+        var textBtnSettings = (isGeneral ? "Set details..." : "General settings...");
+        var tabActive = (isGeneral ? "#tabSetGeneral" : "#tabSetDetails");
+        var tabInactive = (isGeneral ? "#tabSetDetails" : "#tabSetGeneral");
+        $(ctrlToDisplay).css("display", "block");
+        $(ctrlToHide).css("display", "none");
+        $(".txt-togglesettings").html(textBtnSettings);
+        if ( $(tabInactive).hasClass("active") ) {
+            $(tabInactive).removeClass("active");
+            $(tabActive).addClass("active");
+        }
+        IsGeneralSettings = isGeneral;
+    }
 
     $("#toglDirection").change(function() {
       console.log("hi");

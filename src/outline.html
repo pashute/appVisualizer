@@ -132,11 +132,26 @@
 <!-- ---------------------------------------------------   -->
 <!-- ===== Control section ===== -->
 <section id="sec-design" class="col-sm-4">
-<div class="row">
-  <button id="btnToggleSettings" class="btn btn-default-sm">
-    Set details <i class="fas fas-settings-h"></i>
-  </button>
-</div>
+  <table>
+    <tr>
+      <td>
+    <div id="controlsTab">
+      <ul id="tabSettings" class="nav nav-tabs">
+        <li id="tabSetGeneral" class="active">
+          <a data-toggle="tab" href="#">
+            <i class="fa fa-palette"></i> Theme  
+          </a>
+        </li>
+        <li id="tabSetDetails">
+          <a data-toggle="tab" href="#">
+            <i class="fa fa-sliders-h"></i> Details  
+          </a>
+        </li>
+      </ul>
+    </div>
+      </td>
+    </tr>
+  </table>
   <!-- ==========  General controls card ==============  -->  
 <div id="generalControls">
   <div class="table-responsive">
@@ -158,7 +173,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="3">
+        <td colli="3">
             &nbsp;&nbsp;<a href="www.ibm.com">import theme... </a> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#">export theme... </a>
@@ -226,100 +241,102 @@
         </td>
       </tr>
     </table>
-  </div><!-- of general controls-->
-      
+  </div><!-- of table responsive-->
+</div>  <!-- of general controls-->    
 <!--  ====== Detail controls card ========= -->
 <div id="detailControls" style="display:none">
+  <br />
   <h3> Detailed settings </h3>
-    <strong>App header</strong>
-    <table class="table">
-      <tr>
-        <td colspan="3">
-          <strong>Color: </strong> &nbsp;&nbsp;&nbsp;
-          <i id="clrAppHdr" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-          <input class="jscolor" mybox="clrAppHdr" 
-                 onchange="onJqColor(this)" value="9d86c9" />
-          </td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <strong>Text:</strong> &nbsp;&nbsp;
-          <i class="fa fa-plus-square" value="1" inp="inpHdrTxtSize" 
-             style="size: 2px;"></i>
-          <input id="inpHdrTxtSize" type="number" 
-            value="16" style="width:40px;" />
-          <i class="fa fa-minus-square" 
-            value="-1" inp="inpHdrTxtSize" style="size: 2px;"></i>
-          &nbsp;&nbsp;
-          <span id="btnHdrBold" class="btn btn-sq-sm active">
-              <i class="fa fa-bold"></i>
-          </span>
-          <span id="btnHdrItalic" class="btn btn-sq-sm">
-              <i class="fa fa-italic"></i>
-          </span> 
-          &nbsp;&nbsp;
-          <strong>
-            <i class="fa fa-font" style="color:darkgreen"></i>
-          </strong>:
-          <i id="clrAppHdrTxt" class="fa fa-square" style="color:#050505;size:2px;"></i>
-          <input class="jscolor" mybox="clrAppHdrTxt" 
-                onchange="onJqColor(this)" value="050505" />
+  <strong>App header</strong>
+  <div class="table-responsive">
+  <table class="table">
+    <tr>
+      <td colspan="3">
+        <strong>Color: </strong> &nbsp;&nbsp;&nbsp;
+        <i id="clrAppHdr" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
+        <input class="jscolor" mybox="clrAppHdr" 
+                onchange="onJqColor(this)" value="9d86c9" />
         </td>
-      </tr>
-    </table>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <strong>Text:</strong> &nbsp;&nbsp;
+        <i class="fa fa-plus-square" value="1" inp="inpHdrTxtSize" 
+            style="size: 2px;"></i>
+        <input id="inpHdrTxtSize" type="number" 
+          value="16" style="width:40px;" />
+        <i class="fa fa-minus-square" 
+          value="-1" inp="inpHdrTxtSize" style="size: 2px;"></i>
+        &nbsp;&nbsp;
+        <span id="btnHdrBold" class="btn btn-sq-sm active">
+            <i class="fa fa-bold"></i>
+        </span>
+        <span id="btnHdrItalic" class="btn btn-sq-sm">
+            <i class="fa fa-italic"></i>
+        </span> 
+        &nbsp;&nbsp;
+        <strong>
+          <i class="fa fa-font" style="color:darkgreen"></i>
+        </strong>:
+        <i id="clrAppHdrTxt" class="fa fa-square" style="color:#050505;size:2px;"></i>
+        <input class="jscolor" mybox="clrAppHdrTxt" 
+              onchange="onJqColor(this)" value="050505" />
+      </td>
+    </tr>
+  </table>
     
-    <strong>List settings</strong>
-    <table class="table">
-      <tr>  
-        <td colspan=3>
-          <strong>Color:</strong> &nbsp; 
-          <i id="clrList" class="fa fa-square color-box" 
-              style="color:#f9f9f9;size:2px;"></i>
-          <input class="jscolor" mybox="clrList" 
-                 onchange="onJqColor(this)"     value="f9f9f9" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-            <strong>Caption:</strong> 
-            <i class="fa fa-plus-square" value="1" inp="inpListCapTxtSize" 
-               style="size: 2px;"></i>
-            <input id="inpListCapTxtSize" type="number" 
-              value="16" style="width:40px;" />
-            <i class="fa fa-minus-square" 
-              value="-1" inp="inpListCapTxtSize" style="size: 2px;"></i>
-            <span id="btnListCapBold" class="btn btn-sq-sm active">
-                <i class="fa fa-bold"></i>
-            </span>
-            <span id="btnListCapItalic" class="btn btn-sq-sm">
-                <i class="fa fa-italic"></i>
-            </span> 
-            <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
-          <i id="clrListCaption" class="fa fa-square" style="color:#050505;size:2px;"></i>
-          <input class="jscolor" mybox="clrListCaption" onchange="onJqColor(this)" value="050505" />      
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <strong>Item:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-          <i class="fa fa-plus-square" value="1" inp="inpListItmTxtSize" 
-             style="size: 2px;"></i>
-          <input id="inpListItmTxtSize" type="number" 
+  <strong>List settings</strong>
+  <table class="table">
+    <tr>  
+      <td colspan=3>
+        <strong>Color:</strong> &nbsp; 
+        <i id="clrList" class="fa fa-square color-box" 
+            style="color:#f9f9f9;size:2px;"></i>
+        <input class="jscolor" mybox="clrList" 
+                onchange="onJqColor(this)"     value="f9f9f9" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+          <strong>Caption:</strong> 
+          <i class="fa fa-plus-square" value="1" inp="inpListCapTxtSize" 
+              style="size: 2px;"></i>
+          <input id="inpListCapTxtSize" type="number" 
             value="16" style="width:40px;" />
           <i class="fa fa-minus-square" 
-            value="-1" inp="inpListItmTxtSize" style="size: 2px;"></i>
-          <span id="btnListItmBold" class="btn btn-sq-sm active">
+            value="-1" inp="inpListCapTxtSize" style="size: 2px;"></i>
+          <span id="btnListCapBold" class="btn btn-sq-sm active">
               <i class="fa fa-bold"></i>
           </span>
-          <span id="btnListItmItalic" class="btn btn-sq-sm">
+          <span id="btnListCapItalic" class="btn btn-sq-sm">
               <i class="fa fa-italic"></i>
           </span> 
           <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
-          <i id="clrListItm" class="fa fa-square" style="color:#050505;size:2px;"></i>
-              <input class="jscolor" mybox="clrListItm" onchange="onJqColor(this)" value="050505" />      
-        </td>
-      </tr>
-    </table>
+        <i id="clrListCaption" class="fa fa-square" style="color:#050505;size:2px;"></i>
+        <input class="jscolor" mybox="clrListCaption" onchange="onJqColor(this)" value="050505" />      
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <strong>Item:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <i class="fa fa-plus-square" value="1" inp="inpListItmTxtSize" 
+            style="size: 2px;"></i>
+        <input id="inpListItmTxtSize" type="number" 
+          value="16" style="width:40px;" />
+        <i class="fa fa-minus-square" 
+          value="-1" inp="inpListItmTxtSize" style="size: 2px;"></i>
+        <span id="btnListItmBold" class="btn btn-sq-sm active">
+            <i class="fa fa-bold"></i>
+        </span>
+        <span id="btnListItmItalic" class="btn btn-sq-sm">
+            <i class="fa fa-italic"></i>
+        </span> 
+        <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
+        <i id="clrListItm" class="fa fa-square" style="color:#050505;size:2px;"></i>
+            <input class="jscolor" mybox="clrListItm" onchange="onJqColor(this)" value="050505" />      
+      </td>
+    </tr>
+  </table>
     <strong>Button</strong>
     <table class="table">
       <tr>  
@@ -353,9 +370,18 @@
           </td>      
         </tr>
     </table>
-    
-    </div><!-- of details controls-->
-   
+    </div><!-- of table responsive-->
+</div><!-- of details controls-->
+
+<!--  copy of button at bottom of page-->
+<div class="row">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="btnToggleSettings2" class="btn btn-default btn-togglesettings">
+      <i class="fa fa-sliders-h"></i> 
+      <span id="txtToggleSettings2" class="txt-togglesettings">Set details...</span> 
+    </button>
+</div>
+
     </section>
 
       </div><!-- ===== of vys component -->
