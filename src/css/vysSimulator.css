@@ -14,9 +14,12 @@
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
 
 }
-.vys-logo {
 
+.vys-logo {
+    /* id: vysImgHeaderLogo set src attrib */ 
+    
 }
+
 
 button.vys-button {
     color: rgb(5,5,5) !important;
@@ -26,17 +29,42 @@ button.vys-button {
 }
 
 .vys-button-text {
+    color: #050505;
+}
+
+.vys-list{
+    
+}
+
+.vys-list-caption { /* label */
 
 }
 
-.vys-list-caption {
-
+.vys-list-text{  /* input */
+    color: rgb(5,5,5) !important; /* rgb(51,51,51); */    
 }
-.vys-list
-
 /*
 // vys-hdrcolor // color
 // vys-hdrtext  // title fontfam, color, width, 
 // vys-logo      // url, logoWidth
 // vys-button       // 
 */
+.vyslooks-row {
+    display: flex;
+}
+.vyslooks-input-container {
+    -webkit-appearance: none;
+    -webkit-writing-mode: horizontal-tb !important;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    border-color: rgb(255,255,255);
+    border-style: solid;
+    border-width: 0px;
+    display: block;
+    text-align: left;
+    text-size-adjust: 100%;
+    text-shadow: rgb(243,243,243) 0px 1px 0px;
+}
