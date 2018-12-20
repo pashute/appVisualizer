@@ -2,6 +2,29 @@ var IsGeneralSettings = true;
 
 // See list of classes in vysCtrl.css
 
+var cnfg = { 
+    clrThemeCustom: "", 
+    clrThemeList: "",
+    clrAppBg: "", 
+    clrAppHdr: "",
+    clrAppHdrTxt: "",
+    clrList: ""
+};
+
+function setTheme(themeNumber){
+    console.log("dbg.setTheme tbd");
+    // controls
+    // -- theme controls --
+    //  clrThemeCustom inp color
+    //  clrAppHdr inp jscolor
+    //  clrBtn  inp jscolor
+    
+    //   clrThemeBg
+    //  color in box and inp clrAppBg
+    
+    // -- details --
+
+}
 
 /// jq ready
 $(function() {
@@ -19,6 +42,14 @@ $(function() {
     });
     $(".btn-togglesettings").click(function(){
         setTab(isGeneral=!IsGeneralSettings)
+    });
+    $("#logoRange").change(function(){
+        var logoWidth = $("#logoRange").val();
+        $("#logoWidth").val(logoWidth);
+    });
+    $("#logoWidth").change(function(){
+        var logoWidth = $("#logoWidth").val();
+        $("#logoRange").val(logoWidth);
     });
 
     function setTab(isGeneral){
@@ -38,7 +69,7 @@ $(function() {
     }
 
     $("#toglDirection").change(function() {
-      console.log("hi");
+      console.log("dbg.toglDirection change");
       appState.curDirectionRTL = !appState.curDirectionRTL;
       let rtlTxt = appState.curDirectionRTL ? ' RTL' : ' LTR';
       console.log(rtlTxt);
@@ -111,26 +142,62 @@ $(function() {
     initJqChk();
   });
 
-  // ==== archived. still in jq function  ============
-
-  // btnClr click
-   // $( "#clr2" ).click(function() {
-    // console.log(this.id);
-    // if ( $(this).hasClass("w3-topbar") )
-    //     $(this).removeClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
-    // else
-    //     $(this).addClass(["w3-topbar", "w3-bottombar", "w3-leftbar", "w3-rightbar"]);
-
-  //}); // btnClr click
   
 });
 
   // ---- jq color picker  ---------------------
   function onJqColor(jqColor){
-      console.log(jqColor);
-      var mybox = jqColor.getAttribute("mybox");
-      var clr = jqColor.value;
+    console.log("dbg.jqColor: ", jqColor); 
+    var mybox = jqColor.getAttribute("mybox");
+    var clr = jqColor.value;
     $("#"+mybox).css("color", "#"+clr);
+    var inputid = jqColor.getAttribute("id");
+    $("#"+inputid)[0].jscolor.hide();
+
+    // now decide action
+    switch(inputid) {
+        case "":
+            break;
+        default:
+        
+    }
   }  
 
+  // e.preventDefault();  // ignore events
 
+// ----  control functions -----
+function setThemeCustom(clr){
+    console.log("dbg.setThemeCustom tbd");
+    // controls
+    // -- theme controls --
+    //  color in box and inp clrThemeCustom
+    //  color in box and inp clrThemeBg
+    //  color in box and inp clrAppBg
+    // -- details --
+    //  color in box and inp appHdr
+
+    // simulation
+    setHeaderColor(clr);
+    setListColor(clr);
+    //  clr
+}
+
+function setThemeCustomBg(clr){
+    setJsColor("inpClr...", "tbd", clr); // header ctrl
+    setJsColor("inpClr...", "tbd", clr); // button ctrl
+
+    setBgColor(clr); // sets app background and list background
+}
+
+function setBgColor(clr){
+    cnfg.clrAppBg = clr;
+    $("tbd...").css("color", "#"+clr); // simulator header
+
+    cnfg.clrList = clr;
+    $("tbd...").css("color", "#"+clr); // simulator list background
+}
+
+function setJsColor(jsid, boxid, clr){
+    $("#"+jsid).attr("value", clr);
+    $("#"+boxid).css("color", "#"+clr);
+}

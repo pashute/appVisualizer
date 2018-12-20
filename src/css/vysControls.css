@@ -9,6 +9,13 @@
   font-family: 'Times New Roman', serif !important;
 }
 
+.vyscontrols-box-custom-color {
+  display: inline-block;
+  padding-top: 3px;
+  padding-left: 25px;
+  vertical-align: middle;
+}
+
 .vyscontrols-link {
   color: #050505 !important;
 }

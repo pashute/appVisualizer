@@ -161,19 +161,28 @@
   <div class="table-responsive">
     <table id="tblColorset" class="table">
       <tr>
-        <td class="column-text-fit">
-          <strong>Color set: &nbsp;</strong>
-        </td>
-        <td class="column-text-fit">
-          <div id="colorsetChooser" class="color-picker-simulator">
-            <img src="../images/tinyColorPick.jpg" class="color-picker-img" />
+        <td colspan="3">
+          <div style="display:inline-block">
+            <strong>Color set: &nbsp;</strong>
+            <img src="../images/tinyColorPick.jpg" class="color-picker-img" usemap="clrpickMap" />
+            <map name="clrpickMap">
+              <area class="areaOrange11" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+            </map>
           </div>
-        </td>
-        <td>
-          <i class="fas fa-palette" 
-            style="font-size:20px;color:#9D86c9"></i> <br />
+          <div class="vyscontrols-box-custom-color">
+            <i class="fas fa-palette" 
+              style="font-size:20px;"></i>
             <i id="clrThemeCustom" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-            <input class="jscolor" mybox="clrThemeCustom" onchange="onJqColor(this)" value="9d86c9" />    
+            <input id="inpClrThemeCustom" class="jscolor" mybox="clrThemeCustom" 
+                   onchange="onJqColor(this)" value="9d86c9" /> <br /> 
+            <i class="fas fa-fill" 
+              style="font-size:20px;"></i>
+            <i id="clrThemeList" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
+            <input id="inpClrThemeList" class="jscolor" mybox="clrThemeList" 
+                   onchange="onJqColor(this)" value="f9f9f9" /> 
+                   
+
+          </div>
         </td>
       </tr>
       <tr>
@@ -184,7 +193,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="3">
+        <td colspan="2">
             &nbsp;<strong>Font &nbsp;&nbsp;&nbsp;
             <div class="form-group">
               <select class="form-control vys-dropdown" id="slctFont">
@@ -219,8 +228,8 @@
         <td colspan="3">
           <input type="radio" class="inline-radio" /> 
           <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
-          <i id="clrAppBg" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-          <input class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="9d86c9" />
+          <i id="clrAppBg" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
+          <input id="inpClrAppBg" class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="f9f9f9" />
         </td>
       </tr>
     </table>
@@ -235,12 +244,12 @@
           <span class="form-inline">
             <div class="form-group">
               &nbsp;&nbsp;
-              <input type="range" style="width: 80px" 
+              <input id="logoRange" type="range" style="width: 80px" 
                 data-min="25" data-max="150" value="42"  /> 
               &nbsp;&nbsp; 
             </div>
             <div class="form-group">
-              &nbsp;&nbsp;<input type="number" value="42" style="width: 40px" /> %
+              &nbsp;&nbsp;<input id="logoWidth" type="number" value="42" style="width: 48px" /> %
             </div>
           </span>
         </td>
@@ -258,7 +267,7 @@
       <td colspan="3">
         <strong>Color: </strong> &nbsp;&nbsp;&nbsp;
         <i id="clrAppHdr" class="fa fa-square" style="color:#9d86c9;size:2px;"></i>
-        <input class="jscolor" mybox="clrAppHdr" 
+        <input id="inpClrAppHdr" class="jscolor" mybox="clrAppHdr" 
                 onchange="onJqColor(this)" value="9d86c9" />
         </td>
     </tr>
@@ -283,7 +292,7 @@
           <i class="fa fa-font" style="color:darkgreen"></i>
         </strong>:
         <i id="clrAppHdrTxt" class="fa fa-square" style="color:#050505;size:2px;"></i>
-        <input class="jscolor" mybox="clrAppHdrTxt" 
+        <input id="inpClrAppHdrTxt" class="jscolor" mybox="clrAppHdrTxt" 
               onchange="onJqColor(this)" value="050505" />
       </td>
     </tr>
@@ -296,7 +305,7 @@
         <strong>Color:</strong> &nbsp; 
         <i id="clrList" class="fa fa-square color-box" 
             style="color:#f9f9f9;size:2px;"></i>
-        <input class="jscolor" mybox="clrList" 
+        <input id="inpClrList" class="jscolor" mybox="clrList" 
                 onchange="onJqColor(this)"     value="f9f9f9" />
       </td>
     </tr>
@@ -317,7 +326,7 @@
           </span> 
           <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
         <i id="clrListCaption" class="fa fa-square" style="color:#050505;size:2px;"></i>
-        <input class="jscolor" mybox="clrListCaption" onchange="onJqColor(this)" value="050505" />      
+        <input id="inpClrListCaption" class="jscolor" mybox="clrListCaption" onchange="onJqColor(this)" value="050505" />      
       </td>
     </tr>
     <tr>
@@ -337,7 +346,8 @@
         </span> 
         <strong><i class="fa fa-font" style="color:darkgreen"></i></strong>: &nbsp;      
         <i id="clrListItm" class="fa fa-square" style="color:#050505;size:2px;"></i>
-            <input class="jscolor" mybox="clrListItm" onchange="onJqColor(this)" value="050505" />      
+            <input id="inpClrListItm" class="jscolor" mybox="clrListItm" 
+                   onchange="onJqColor(this)" value="050505" />      
       </td>
     </tr>
   </table>
@@ -348,7 +358,8 @@
           <strong>Color:</strong> &nbsp;&nbsp;
             <i id="clrButton" class="fa fa-square" 
                 style="color:#9d86c9;size:2px;"></i>
-            <input class="jscolor" mybox="clrButton" onchange="onJqColor(this)" value="9d86c9" />    
+            <input id="inpClrButton" class="jscolor" mybox="clrButton" 
+                   onchange="onJqColor(this)" value="9d86c9" />    
         </td>
       </tr>
       <tr>
@@ -369,7 +380,7 @@
             <i class="fa fa-font" style="color:darkgreen"></i>
           </strong>:
           <i id="clrAppHdrTxt" class="fa fa-square" style="color:#050505;size:2px;"></i>
-          <input class="jscolor" mybox="clrAppHdrTxt" 
+          <input id="inpClrAppHdrTxt" class="jscolor" mybox="clrAppHdrTxt" 
                 onchange="onJqColor(this)" value="050505" />
           </td>      
         </tr>
