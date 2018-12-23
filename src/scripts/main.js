@@ -6,6 +6,7 @@ var cnfg = {
     themeId: 0, // 0 for custome theme
     themeColor: "", 
     themeBgColor: "",
+    themeTxtColor: "",
     
     appBgColor: "", 
     appBgImg: {url: "", local: "", stretch: false},
@@ -14,12 +15,24 @@ var cnfg = {
     headerTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
 
     listBgColor: "",
-    listTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
+    listCaptionTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
+    listInputTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
 
     buttonColor: "",
     buttonTxt: {color:"", font:"", size: 12.5, bold: false, italic: false}
 };
 
+var themes = [{
+    id: 13, // 0 for custome theme
+    color: "d9d9d9", 
+    bgColor: "ffffff",
+    txtColor: "050505"
+}, {
+    id: 14, // 0 for custome theme
+    color: "393939", 
+    bgColor: "1a1a1a",
+    txtColor: "fdfdfd"
+}];
 
 /// === jq ready ===
 $(function() {
@@ -38,6 +51,12 @@ $(function() {
     $(".btn-togglesettings").click(function(){
         setTab(isGeneral=!IsGeneralSettings)
     });
+    $("#slctFont").change(function() {
+        var newfont = $(this).val();
+        if (newfont == "Default")
+            newfont = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        setSimFont(newfont);
+    });
     $("#logoRange").change(function(){
         var logoWidth = $("#logoRange").val();
         $("#logoWidth").val(logoWidth);
@@ -46,6 +65,12 @@ $(function() {
         var logoWidth = $("#logoWidth").val();
         $("#logoRange").val(logoWidth);
     });
+    $(".area15Default").click(function(){
+        setThemeCustom(themes[0].color);
+        setThemeCustomBg(themes[0].bgColor);
+        // tbd set theme text color 
+    })
+
 
     function setTab(isGeneral){
         var ctrlToDisplay = (isGeneral ? "#generalControls" : "#detailControls");
@@ -154,8 +179,12 @@ $(function() {
         case "inpClrThemeCustom":
             setThemeCustom(clr);
             break;
-        case "inpClrButton":
+        case "inpClrButton": 
             setSimButtonColor(clr);
+            break;
+        case "inpClrThemeBg":
+            setThemeCustomBg(clr);
+            break;
         default:
         
     }
@@ -201,18 +230,37 @@ function setSimButtonColor(clr){
 }
 
 function setThemeCustomBg(clr){
-    setJsColor("inpClr...", "tbd", clr); // header ctrl
-    setJsColor("inpClr...", "tbd", clr); // button ctrl
+    setJsColor("inpClrAppBg", "clrAppBg", clr); // header ctrl
+    setJsColor("inpClrList", "clrList", clr); // button ctrl
 
     setSimBgColor(clr); // sets app background and list background
 }
 
 function setSimBgColor(clr){
     cnfg.appBgColor = clr;
-    $("tbd...").css("color", "#"+clr); // simulator background
+    $("#appsim").css("background-color", "#"+clr); // simulator background
 
     cnfg.listBgColor = clr;
-    $("tbd...").css("color", "#"+clr); // simulator list background
+    $("vys-fld-container").css("background-color", "#"+clr); // simulator list background
+}
+
+function setSimFont(newfont){
+    // console.log("dbg.setSimFont", newfont)
+    $("#appsim").css('font-family', newfont);
+
+    cnfg.headerTxt.font = newfont;
+    $(".vys-header-text").css('font-family', newfont);
+    
+    cnfg.buttonTxt.font = newfont;
+    cnfg.listCaptionTxt.font = newfont;
+    //$("#appsim").css('font-family', newfont);
+
+    // input font doesn't work. opened issue: #7 fix/txtboxFont
+    //   https://github.com/pashute/appVisualizer/issues/7 
+    cnfg.listInputTxt.font = newfont;
+    // $(".vys-input").each(function(idx, elem){
+    //     elem.style.setProperty('font-family', newfont);
+    // });
 }
 
 function setJsColor(jsid, boxid, clr){

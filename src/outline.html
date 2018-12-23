@@ -166,7 +166,16 @@
             <strong>Color set: &nbsp;</strong>
             <img src="../images/tinyColorPick.jpg" class="color-picker-img" usemap="clrpickMap" />
             <map name="clrpickMap">
-              <area class="areaOrange11" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              <area class="area15Default" shape="circle" coords="50,46, 7" href="#" alt="default silver" />
+              <area class="area14White" shape="poly" coords="50,21, 72,32, 75,48 69,65, 67,66, 50,72, 50,55, 56,50, 57,44, 53,39, 51, 38" href="#" alt="white" />
+              <area class="area11Orange" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="light orange" />
+              <!--
+              <area class="areaOrange12" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              <area class="areaOrange1" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              <area class="areaOrange2" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              <area class="areaOrange3" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              <area class="areaOrange4" shape="poly" coords="21,15, 31,27, 44,20, 57,19, 60,5, 39,5" href="#" alt="lightOrange" />
+              -->
             </map>
           </div>
           <div class="vyscontrols-box-custom-color">
@@ -177,8 +186,8 @@
                    onchange="onJqColor(this)" value="9d86c9" /> <br /> 
             <i class="fas fa-fill" 
               style="font-size:20px;"></i>
-            <i id="clrThemeList" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
-            <input id="inpClrThemeList" class="jscolor" mybox="clrThemeList" 
+            <i id="clrThemeBg" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
+            <input id="inpClrThemeBg" class="jscolor" mybox="clrThemeBg" 
                    onchange="onJqColor(this)" value="f9f9f9" /> 
                    
 
@@ -187,25 +196,12 @@
       </tr>
       <tr>
         <td colspan="3">
-            <button><a href="#" class="btn vyscontrols-link">import theme... </a></button>
-            &nbsp;&nbsp;
-            <button><a href="#"class="btn vyscontrols-link">export theme... </a></button>
+          <input type="radio" name="bgtype" class="inline-radio" checked /> 
+          <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
+          <i id="clrAppBg" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
+          <input id="inpClrAppBg" class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="f9f9f9" />
         </td>
       </tr>
-      <tr>
-        <td colspan="2">
-            &nbsp;<strong>Font &nbsp;&nbsp;&nbsp;
-            <div class="form-group">
-              <select class="form-control vys-dropdown" id="slctFont">
-                <option class="vyscontrols-font-arial">Arial</option>
-                <option class="vyscontrols-font-timesnr">Times New Roman</option>
-                <option class="vscontrols-font-tangerine">Tangerine</option>
-                <option value="vscontrols-font-lobster">Lobster</option>
-                <option>David</option>
-              </select>
-            </div>
-        </td>
-      </tr>  
       <tr>
         <td class="column-text-fit">
           <input type="radio" name="bgtype" class="inline-radio" /> 
@@ -225,13 +221,20 @@
         </td>
       </tr>
       <tr>
-        <td colspan="3">
-          <input type="radio" name="bgtype" class="inline-radio" checked /> 
-          <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
-          <i id="clrAppBg" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
-          <input id="inpClrAppBg" class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="f9f9f9" />
+        <td colspan="2">
+            &nbsp;<strong>Font &nbsp;&nbsp;&nbsp;
+            <div class="form-group">
+              <select id="slctFont" class="form-control vys-dropdown">
+                <option class="vyscontrols-font-arial">Default</option>
+                <option class="vyscontrols-font-arial">Arial</option>
+                <option class="vyscontrols-font-timesnr">Times New Roman</option>
+                <option class="vscontrols-font-tangerine">Tangerine</option>
+                <option value="vscontrols-font-lobster">Lobster</option>
+                <option>David</option>
+              </select>
+            </div>
         </td>
-      </tr>
+      </tr>  
     </table>
     
     <table id="tblLogo" class="table">
@@ -254,7 +257,14 @@
           </span>
         </td>
       </tr>
-    </table>
+      <tr>
+        <td colspan="3">
+          <button><a href="#" class="btn vyscontrols-link">import theme... </a></button>
+          &nbsp;&nbsp;
+          <button><a href="#"class="btn vyscontrols-link">export theme... </a></button>
+        </td>
+      </tr>
+      </table>
   </div><!-- of table responsive-->
 </div>  <!-- of general controls-->    
 <!--  ====== Detail controls card ========= -->
