@@ -208,7 +208,7 @@
       </tr>  
       <tr>
         <td class="column-text-fit">
-          <input type="radio" class="inline-radio" /> 
+          <input type="radio" name="bgtype" class="inline-radio" /> 
           <strong>Background image:</strong>
         </td>
         <td colspan="2">
@@ -218,15 +218,15 @@
       <tr>
         <td></td>
         <td colspan="2">
-          <input type="radio" class="inline-radio">&nbsp; 
+          <input type="radio" name="bgImgFormat" class="inline-radio" checked>&nbsp; 
           <i class="fas fa-expand-arrows-alt"></i> Stretch</input> &nbsp;&nbsp; 
-          <input type="radio" class="inline-radio">&nbsp; 
+          <input type="radio" name="bgImgFormat" class="inline-radio">&nbsp; 
           <i class="fas fa-th"></i> Tile 
         </td>
       </tr>
       <tr>
         <td colspan="3">
-          <input type="radio" class="inline-radio" /> 
+          <input type="radio" name="bgtype" class="inline-radio" checked /> 
           <strong>Background color:</strong> &nbsp;&nbsp;&nbsp;
           <i id="clrAppBg" class="fa fa-square" style="color:#f9f9f9;size:2px;"></i>
           <input id="inpClrAppBg" class="jscolor" mybox="clrAppBg" onchange="onJqColor(this)" value="f9f9f9" />

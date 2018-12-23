@@ -3,30 +3,25 @@ var IsGeneralSettings = true;
 // See list of classes in vysCtrl.css
 
 var cnfg = { 
-    clrThemeCustom: "", 
-    clrThemeList: "",
-    clrAppBg: "", 
-    clrAppHdr: "",
-    clrAppHdrTxt: "",
-    clrList: ""
+    themeId: 0, // 0 for custome theme
+    themeColor: "", 
+    themeBgColor: "",
+    
+    appBgColor: "", 
+    appBgImg: {url: "", local: "", stretch: false},
+
+    headerColor: "",     
+    headerTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
+
+    listBgColor: "",
+    listTxt: {color:"", font:"", size: 12.5, bold: false, italic: false},
+
+    buttonColor: "",
+    buttonTxt: {color:"", font:"", size: 12.5, bold: false, italic: false}
 };
 
-function setTheme(themeNumber){
-    console.log("dbg.setTheme tbd");
-    // controls
-    // -- theme controls --
-    //  clrThemeCustom inp color
-    //  clrAppHdr inp jscolor
-    //  clrBtn  inp jscolor
-    
-    //   clrThemeBg
-    //  color in box and inp clrAppBg
-    
-    // -- details --
 
-}
-
-/// jq ready
+/// === jq ready ===
 $(function() {
     console.log("jquery ready");
     //$("detailControls").css("display","none");
@@ -147,7 +142,7 @@ $(function() {
 
   // ---- jq color picker  ---------------------
   function onJqColor(jqColor){
-    console.log("dbg.jqColor: ", jqColor); 
+    // console.log("dbg.jqColor: ", jqColor); 
     var mybox = jqColor.getAttribute("mybox");
     var clr = jqColor.value;
     $("#"+mybox).css("color", "#"+clr);
@@ -156,8 +151,11 @@ $(function() {
 
     // now decide action
     switch(inputid) {
-        case "":
+        case "inpClrThemeCustom":
+            setThemeCustom(clr);
             break;
+        case "inpClrButton":
+            setSimButtonColor(clr);
         default:
         
     }
@@ -165,39 +163,60 @@ $(function() {
 
   // e.preventDefault();  // ignore events
 
-// ----  control functions -----
+  // ===================================================
+  // ----  Visualizer actions -----
+  // ====================================================
+function setTheme(themeId){
+    console.log("dbg.setTheme tbd");
+    // controls
+    // -- theme controls --
+    //  clrThemeCustom inp color
+    //  clrAppHdr inp jscolor
+    //  clrBtn  inp jscolor
+    
+    //   clrThemeBg
+    //  color in box and inp clrAppBg
+    
+    // -- details --
+
+}
+
+
 function setThemeCustom(clr){
     console.log("dbg.setThemeCustom tbd");
     // controls
-    // -- theme controls --
-    //  color in box and inp clrThemeCustom
-    //  color in box and inp clrThemeBg
-    //  color in box and inp clrAppBg
-    // -- details --
-    //  color in box and inp appHdr
+    setJsColor("inpClrAppHdr", "clrAppHdr", clr); // header color control
+    setJsColor("inpClrButton", "clrButton", clr); // button color control 
 
     // simulation
-    setHeaderColor(clr);
-    setListColor(clr);
-    //  clr
+    $(".vys-header").css("background-color", "#"+clr); // setHeaderColor(clr);
+    setSimButtonColor(clr);
+}
+
+function setSimButtonColor(clr){
+    
+    $("button.vys-button").each(function(idx, btn){
+        btn.style.setProperty('background-color', '#'+clr, 'important');  
+    });
 }
 
 function setThemeCustomBg(clr){
     setJsColor("inpClr...", "tbd", clr); // header ctrl
     setJsColor("inpClr...", "tbd", clr); // button ctrl
 
-    setBgColor(clr); // sets app background and list background
+    setSimBgColor(clr); // sets app background and list background
 }
 
-function setBgColor(clr){
-    cnfg.clrAppBg = clr;
-    $("tbd...").css("color", "#"+clr); // simulator header
+function setSimBgColor(clr){
+    cnfg.appBgColor = clr;
+    $("tbd...").css("color", "#"+clr); // simulator background
 
-    cnfg.clrList = clr;
+    cnfg.listBgColor = clr;
     $("tbd...").css("color", "#"+clr); // simulator list background
 }
 
 function setJsColor(jsid, boxid, clr){
-    $("#"+jsid).attr("value", clr);
+    $("#"+jsid).val(clr);
+    $("#"+jsid).css("background-color", "#"+clr);
     $("#"+boxid).css("color", "#"+clr);
 }
